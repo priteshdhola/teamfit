@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */; };
+		21BF56C517D5A9D100D2A6DB /* TFOpenActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C417D5A9D100D2A6DB /* TFOpenActivityViewController.m */; };
+		21CDC65117D5464B002116CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC65017D5464B002116CE /* UIKit.framework */; };
+		21CDC65317D5464B002116CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC65217D5464B002116CE /* Foundation.framework */; };
+		21CDC65517D5464B002116CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC65417D5464B002116CE /* CoreGraphics.framework */; };
+		21CDC65B17D5464B002116CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC65917D5464B002116CE /* InfoPlist.strings */; };
+		21CDC65D17D5464B002116CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC65C17D5464B002116CE /* main.m */; };
+		21CDC66117D5464B002116CE /* TFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC66017D5464B002116CE /* TFAppDelegate.m */; };
+		21CDC66317D5464B002116CE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC66217D5464B002116CE /* Default.png */; };
+		21CDC66517D5464B002116CE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC66417D5464B002116CE /* Default@2x.png */; };
+		21CDC66717D5464B002116CE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC66617D5464B002116CE /* Default-568h@2x.png */; };
+		21CDC66D17D5464B002116CE /* TFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC66C17D5464B002116CE /* TFViewController.m */; };
+		21CDC67517D5464B002116CE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC67417D5464B002116CE /* SenTestingKit.framework */; };
+		21CDC67617D5464B002116CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC65017D5464B002116CE /* UIKit.framework */; };
+		21CDC67717D5464B002116CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC65217D5464B002116CE /* Foundation.framework */; };
+		21CDC67F17D5464B002116CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC67D17D5464B002116CE /* InfoPlist.strings */; };
+		21CDC68217D5464B002116CE /* TeamFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC68117D5464B002116CE /* TeamFitTests.m */; };
+		21CDC6A517D5481F002116CE /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC68D17D5481F002116CE /* NSObject+SBJson.m */; };
+		21CDC6A617D5481F002116CE /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC69017D5481F002116CE /* SBJsonParser.m */; };
+		21CDC6A717D5481F002116CE /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC69217D5481F002116CE /* SBJsonStreamParser.m */; };
+		21CDC6A817D5481F002116CE /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC69417D5481F002116CE /* SBJsonStreamParserAccumulator.m */; };
+		21CDC6A917D5481F002116CE /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC69617D5481F002116CE /* SBJsonStreamParserAdapter.m */; };
+		21CDC6AA17D5481F002116CE /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC69817D5481F002116CE /* SBJsonStreamParserState.m */; };
+		21CDC6AB17D5481F002116CE /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC69A17D5481F002116CE /* SBJsonStreamWriter.m */; };
+		21CDC6AC17D5481F002116CE /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC69C17D5481F002116CE /* SBJsonStreamWriterAccumulator.m */; };
+		21CDC6AD17D5481F002116CE /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC69E17D5481F002116CE /* SBJsonStreamWriterState.m */; };
+		21CDC6AE17D5481F002116CE /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6A017D5481F002116CE /* SBJsonTokeniser.m */; };
+		21CDC6AF17D5481F002116CE /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6A217D5481F002116CE /* SBJsonUTF8Stream.m */; };
+		21CDC6B017D5481F002116CE /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6A417D5481F002116CE /* SBJsonWriter.m */; };
+		21CDC6B317D54886002116CE /* TFDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6B217D54886002116CE /* TFDashboardViewController.m */; };
+		21CDC6B517D54A0F002116CE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */; };
+		21CDC6B817D54F72002116CE /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6B717D54F72002116CE /* Activity.m */; };
+		21CDC6BB17D57721002116CE /* TFActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6BA17D57720002116CE /* TFActivityCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		21CDC67817D5464B002116CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21CDC64517D5464B002116CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21CDC64C17D5464B002116CE;
+			remoteInfo = TeamFit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21BF56C017D5859600D2A6DB /* TFNewActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFNewActivityViewController.h; sourceTree = "<group>"; };
+		21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFNewActivityViewController.m; sourceTree = "<group>"; };
+		21BF56C317D5A9D100D2A6DB /* TFOpenActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFOpenActivityViewController.h; sourceTree = "<group>"; };
+		21BF56C417D5A9D100D2A6DB /* TFOpenActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFOpenActivityViewController.m; sourceTree = "<group>"; };
+		21CDC64D17D5464B002116CE /* TeamFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CDC65017D5464B002116CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		21CDC65217D5464B002116CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		21CDC65417D5464B002116CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		21CDC65817D5464B002116CE /* TeamFit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TeamFit-Info.plist"; sourceTree = "<group>"; };
+		21CDC65A17D5464B002116CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21CDC65C17D5464B002116CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		21CDC65E17D5464B002116CE /* TeamFit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TeamFit-Prefix.pch"; sourceTree = "<group>"; };
+		21CDC65F17D5464B002116CE /* TFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFAppDelegate.h; sourceTree = "<group>"; };
+		21CDC66017D5464B002116CE /* TFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFAppDelegate.m; sourceTree = "<group>"; };
+		21CDC66217D5464B002116CE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		21CDC66417D5464B002116CE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		21CDC66617D5464B002116CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		21CDC66B17D5464B002116CE /* TFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFViewController.h; sourceTree = "<group>"; };
+		21CDC66C17D5464B002116CE /* TFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFViewController.m; sourceTree = "<group>"; };
+		21CDC67317D5464B002116CE /* TeamFitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeamFitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CDC67417D5464B002116CE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		21CDC67C17D5464B002116CE /* TeamFitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TeamFitTests-Info.plist"; sourceTree = "<group>"; };
+		21CDC67E17D5464B002116CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21CDC68017D5464B002116CE /* TeamFitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamFitTests.h; sourceTree = "<group>"; };
+		21CDC68117D5464B002116CE /* TeamFitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamFitTests.m; sourceTree = "<group>"; };
+		21CDC68C17D5481F002116CE /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		21CDC68D17D5481F002116CE /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		21CDC68E17D5481F002116CE /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		21CDC68F17D5481F002116CE /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		21CDC69017D5481F002116CE /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		21CDC69117D5481F002116CE /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		21CDC69217D5481F002116CE /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		21CDC69317D5481F002116CE /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		21CDC69417D5481F002116CE /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		21CDC69517D5481F002116CE /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		21CDC69617D5481F002116CE /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		21CDC69717D5481F002116CE /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		21CDC69817D5481F002116CE /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		21CDC69917D5481F002116CE /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		21CDC69A17D5481F002116CE /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		21CDC69B17D5481F002116CE /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		21CDC69C17D5481F002116CE /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		21CDC69D17D5481F002116CE /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		21CDC69E17D5481F002116CE /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		21CDC69F17D5481F002116CE /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		21CDC6A017D5481F002116CE /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		21CDC6A117D5481F002116CE /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		21CDC6A217D5481F002116CE /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		21CDC6A317D5481F002116CE /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		21CDC6A417D5481F002116CE /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		21CDC6B117D54886002116CE /* TFDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFDashboardViewController.h; sourceTree = "<group>"; };
+		21CDC6B217D54886002116CE /* TFDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFDashboardViewController.m; sourceTree = "<group>"; };
+		21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		21CDC6B617D54F72002116CE /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = models/Activity.h; sourceTree = "<group>"; };
+		21CDC6B717D54F72002116CE /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = models/Activity.m; sourceTree = "<group>"; };
+		21CDC6B917D57720002116CE /* TFActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFActivityCell.h; sourceTree = "<group>"; };
+		21CDC6BA17D57720002116CE /* TFActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFActivityCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21CDC64A17D5464B002116CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CDC65117D5464B002116CE /* UIKit.framework in Frameworks */,
+				21CDC65317D5464B002116CE /* Foundation.framework in Frameworks */,
+				21CDC65517D5464B002116CE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21CDC66F17D5464B002116CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CDC67517D5464B002116CE /* SenTestingKit.framework in Frameworks */,
+				21CDC67617D5464B002116CE /* UIKit.framework in Frameworks */,
+				21CDC67717D5464B002116CE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21CDC64417D5464B002116CE = {
+			isa = PBXGroup;
+			children = (
+				21CDC68B17D5481F002116CE /* json */,
+				21CDC65617D5464B002116CE /* TeamFit */,
+				21CDC67A17D5464B002116CE /* TeamFitTests */,
+				21CDC64F17D5464B002116CE /* Frameworks */,
+				21CDC64E17D5464B002116CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		21CDC64E17D5464B002116CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21CDC64D17D5464B002116CE /* TeamFit.app */,
+				21CDC67317D5464B002116CE /* TeamFitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21CDC64F17D5464B002116CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21CDC65017D5464B002116CE /* UIKit.framework */,
+				21CDC65217D5464B002116CE /* Foundation.framework */,
+				21CDC65417D5464B002116CE /* CoreGraphics.framework */,
+				21CDC67417D5464B002116CE /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21CDC65617D5464B002116CE /* TeamFit */ = {
+			isa = PBXGroup;
+			children = (
+				21BF56C317D5A9D100D2A6DB /* TFOpenActivityViewController.h */,
+				21BF56C417D5A9D100D2A6DB /* TFOpenActivityViewController.m */,
+				21BF56C017D5859600D2A6DB /* TFNewActivityViewController.h */,
+				21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */,
+				21CDC6B917D57720002116CE /* TFActivityCell.h */,
+				21CDC6BA17D57720002116CE /* TFActivityCell.m */,
+				21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */,
+				21CDC6B117D54886002116CE /* TFDashboardViewController.h */,
+				21CDC6B217D54886002116CE /* TFDashboardViewController.m */,
+				21CDC65F17D5464B002116CE /* TFAppDelegate.h */,
+				21CDC66017D5464B002116CE /* TFAppDelegate.m */,
+				21CDC66B17D5464B002116CE /* TFViewController.h */,
+				21CDC66C17D5464B002116CE /* TFViewController.m */,
+				21CDC65717D5464B002116CE /* Supporting Files */,
+				21CDC6B617D54F72002116CE /* Activity.h */,
+				21CDC6B717D54F72002116CE /* Activity.m */,
+			);
+			path = TeamFit;
+			sourceTree = "<group>";
+		};
+		21CDC65717D5464B002116CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21CDC65817D5464B002116CE /* TeamFit-Info.plist */,
+				21CDC65917D5464B002116CE /* InfoPlist.strings */,
+				21CDC65C17D5464B002116CE /* main.m */,
+				21CDC65E17D5464B002116CE /* TeamFit-Prefix.pch */,
+				21CDC66217D5464B002116CE /* Default.png */,
+				21CDC66417D5464B002116CE /* Default@2x.png */,
+				21CDC66617D5464B002116CE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21CDC67A17D5464B002116CE /* TeamFitTests */ = {
+			isa = PBXGroup;
+			children = (
+				21CDC68017D5464B002116CE /* TeamFitTests.h */,
+				21CDC68117D5464B002116CE /* TeamFitTests.m */,
+				21CDC67B17D5464B002116CE /* Supporting Files */,
+			);
+			path = TeamFitTests;
+			sourceTree = "<group>";
+		};
+		21CDC67B17D5464B002116CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				21CDC67C17D5464B002116CE /* TeamFitTests-Info.plist */,
+				21CDC67D17D5464B002116CE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21CDC68B17D5481F002116CE /* json */ = {
+			isa = PBXGroup;
+			children = (
+				21CDC68C17D5481F002116CE /* NSObject+SBJson.h */,
+				21CDC68D17D5481F002116CE /* NSObject+SBJson.m */,
+				21CDC68E17D5481F002116CE /* SBJson.h */,
+				21CDC68F17D5481F002116CE /* SBJsonParser.h */,
+				21CDC69017D5481F002116CE /* SBJsonParser.m */,
+				21CDC69117D5481F002116CE /* SBJsonStreamParser.h */,
+				21CDC69217D5481F002116CE /* SBJsonStreamParser.m */,
+				21CDC69317D5481F002116CE /* SBJsonStreamParserAccumulator.h */,
+				21CDC69417D5481F002116CE /* SBJsonStreamParserAccumulator.m */,
+				21CDC69517D5481F002116CE /* SBJsonStreamParserAdapter.h */,
+				21CDC69617D5481F002116CE /* SBJsonStreamParserAdapter.m */,
+				21CDC69717D5481F002116CE /* SBJsonStreamParserState.h */,
+				21CDC69817D5481F002116CE /* SBJsonStreamParserState.m */,
+				21CDC69917D5481F002116CE /* SBJsonStreamWriter.h */,
+				21CDC69A17D5481F002116CE /* SBJsonStreamWriter.m */,
+				21CDC69B17D5481F002116CE /* SBJsonStreamWriterAccumulator.h */,
+				21CDC69C17D5481F002116CE /* SBJsonStreamWriterAccumulator.m */,
+				21CDC69D17D5481F002116CE /* SBJsonStreamWriterState.h */,
+				21CDC69E17D5481F002116CE /* SBJsonStreamWriterState.m */,
+				21CDC69F17D5481F002116CE /* SBJsonTokeniser.h */,
+				21CDC6A017D5481F002116CE /* SBJsonTokeniser.m */,
+				21CDC6A117D5481F002116CE /* SBJsonUTF8Stream.h */,
+				21CDC6A217D5481F002116CE /* SBJsonUTF8Stream.m */,
+				21CDC6A317D5481F002116CE /* SBJsonWriter.h */,
+				21CDC6A417D5481F002116CE /* SBJsonWriter.m */,
+			);
+			name = json;
+			path = TeamFit/json;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		21CDC64C17D5464B002116CE /* TeamFit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21CDC68517D5464B002116CE /* Build configuration list for PBXNativeTarget "TeamFit" */;
+			buildPhases = (
+				21CDC64917D5464B002116CE /* Sources */,
+				21CDC64A17D5464B002116CE /* Frameworks */,
+				21CDC64B17D5464B002116CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeamFit;
+			productName = TeamFit;
+			productReference = 21CDC64D17D5464B002116CE /* TeamFit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		21CDC67217D5464B002116CE /* TeamFitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21CDC68817D5464B002116CE /* Build configuration list for PBXNativeTarget "TeamFitTests" */;
+			buildPhases = (
+				21CDC66E17D5464B002116CE /* Sources */,
+				21CDC66F17D5464B002116CE /* Frameworks */,
+				21CDC67017D5464B002116CE /* Resources */,
+				21CDC67117D5464B002116CE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21CDC67917D5464B002116CE /* PBXTargetDependency */,
+			);
+			name = TeamFitTests;
+			productName = TeamFitTests;
+			productReference = 21CDC67317D5464B002116CE /* TeamFitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		21CDC64517D5464B002116CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TF;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = abc;
+			};
+			buildConfigurationList = 21CDC64817D5464B002116CE /* Build configuration list for PBXProject "TeamFit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 21CDC64417D5464B002116CE;
+			productRefGroup = 21CDC64E17D5464B002116CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				21CDC64C17D5464B002116CE /* TeamFit */,
+				21CDC67217D5464B002116CE /* TeamFitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		21CDC64B17D5464B002116CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CDC65B17D5464B002116CE /* InfoPlist.strings in Resources */,
+				21CDC66317D5464B002116CE /* Default.png in Resources */,
+				21CDC66517D5464B002116CE /* Default@2x.png in Resources */,
+				21CDC66717D5464B002116CE /* Default-568h@2x.png in Resources */,
+				21CDC6B517D54A0F002116CE /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21CDC67017D5464B002116CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CDC67F17D5464B002116CE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21CDC67117D5464B002116CE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21CDC64917D5464B002116CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CDC65D17D5464B002116CE /* main.m in Sources */,
+				21CDC66117D5464B002116CE /* TFAppDelegate.m in Sources */,
+				21CDC66D17D5464B002116CE /* TFViewController.m in Sources */,
+				21CDC6A517D5481F002116CE /* NSObject+SBJson.m in Sources */,
+				21CDC6A617D5481F002116CE /* SBJsonParser.m in Sources */,
+				21CDC6A717D5481F002116CE /* SBJsonStreamParser.m in Sources */,
+				21CDC6A817D5481F002116CE /* SBJsonStreamParserAccumulator.m in Sources */,
+				21CDC6A917D5481F002116CE /* SBJsonStreamParserAdapter.m in Sources */,
+				21CDC6AA17D5481F002116CE /* SBJsonStreamParserState.m in Sources */,
+				21CDC6AB17D5481F002116CE /* SBJsonStreamWriter.m in Sources */,
+				21CDC6AC17D5481F002116CE /* SBJsonStreamWriterAccumulator.m in Sources */,
+				21CDC6AD17D5481F002116CE /* SBJsonStreamWriterState.m in Sources */,
+				21CDC6AE17D5481F002116CE /* SBJsonTokeniser.m in Sources */,
+				21CDC6AF17D5481F002116CE /* SBJsonUTF8Stream.m in Sources */,
+				21CDC6B017D5481F002116CE /* SBJsonWriter.m in Sources */,
+				21CDC6B317D54886002116CE /* TFDashboardViewController.m in Sources */,
+				21CDC6B817D54F72002116CE /* Activity.m in Sources */,
+				21CDC6BB17D57721002116CE /* TFActivityCell.m in Sources */,
+				21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */,
+				21BF56C517D5A9D100D2A6DB /* TFOpenActivityViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21CDC66E17D5464B002116CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CDC68217D5464B002116CE /* TeamFitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		21CDC67917D5464B002116CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21CDC64C17D5464B002116CE /* TeamFit */;
+			targetProxy = 21CDC67817D5464B002116CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		21CDC65917D5464B002116CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21CDC65A17D5464B002116CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		21CDC67D17D5464B002116CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				21CDC67E17D5464B002116CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		21CDC68317D5464B002116CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		21CDC68417D5464B002116CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		21CDC68617D5464B002116CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TeamFit/TeamFit-Prefix.pch";
+				INFOPLIST_FILE = "TeamFit/TeamFit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		21CDC68717D5464B002116CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TeamFit/TeamFit-Prefix.pch";
+				INFOPLIST_FILE = "TeamFit/TeamFit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		21CDC68917D5464B002116CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TeamFit.app/TeamFit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TeamFit/TeamFit-Prefix.pch";
+				INFOPLIST_FILE = "TeamFitTests/TeamFitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		21CDC68A17D5464B002116CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TeamFit.app/TeamFit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TeamFit/TeamFit-Prefix.pch";
+				INFOPLIST_FILE = "TeamFitTests/TeamFitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21CDC64817D5464B002116CE /* Build configuration list for PBXProject "TeamFit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21CDC68317D5464B002116CE /* Debug */,
+				21CDC68417D5464B002116CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21CDC68517D5464B002116CE /* Build configuration list for PBXNativeTarget "TeamFit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21CDC68617D5464B002116CE /* Debug */,
+				21CDC68717D5464B002116CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21CDC68817D5464B002116CE /* Build configuration list for PBXNativeTarget "TeamFitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21CDC68917D5464B002116CE /* Debug */,
+				21CDC68A17D5464B002116CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 21CDC64517D5464B002116CE /* Project object */;
+}

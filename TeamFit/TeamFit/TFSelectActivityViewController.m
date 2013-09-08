@@ -7,6 +7,7 @@
 //
 
 #import "TFSelectActivityViewController.h"
+#import "TFRunningActivityViewController.h"
 
 @interface TFSelectActivityViewController ()
 
@@ -56,13 +57,18 @@
 //    [self.delegate selectActivityViewControllerDidStart:self];
 //}
 
+- (void)runningActivityViewControllerDidEnd: (TFRunningActivityViewController *)controller
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 // Segue logic
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"StartingActivity"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        TFNewActivityViewController *newActvitiyViewController = [[navigationController viewControllers] objectAtIndex:0];
-        newActvitiyViewController.delegate = self;
+        TFRunningActivityViewController *runningActvitiyViewController = [[navigationController viewControllers] objectAtIndex:0];
+        runningActvitiyViewController.delegate = self;
     }
 }
 

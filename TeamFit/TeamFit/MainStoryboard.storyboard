@@ -295,10 +295,10 @@
             </objects>
             <point key="canvasLocation" x="2059" y="-105"/>
         </scene>
-        <!--View Controller-->
+        <!--Running Activity View Controller-->
         <scene sceneID="gY5-eE-sei">
             <objects>
-                <viewController id="64B-Cd-1Rh" sceneMemberID="viewController">
+                <viewController id="64B-Cd-1Rh" customClass="TFRunningActivityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7cG-a2-EDg">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -313,7 +313,16 @@
                             <constraint firstItem="tAt-yK-5Od" firstAttribute="bottom" secondItem="7cG-a2-EDg" secondAttribute="bottom" type="default" id="OaZ-nx-Sxg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="PCy-ms-yKj"/>
+                    <navigationItem key="navigationItem" id="YWq-S9-gSW">
+                        <barButtonItem key="rightBarButtonItem" title="End" id="P6e-ec-OhT">
+                            <connections>
+                                <action selector="end:" destination="64B-Cd-1Rh" id="Bf5-sD-kmW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="tAt-yK-5Od" id="IXI-LO-ESm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pv-R8-5ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,7 +444,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Start" id="EBu-OA-S4N">
                             <connections>
                                 <action selector="start:" destination="YHW-PX-EBI" id="xRk-8c-Spz"/>
-                                <segue destination="Yl0-Xw-o6A" kind="modal" identifier="StartingActivity" id="wIN-xm-1h4"/>
+                                <segue destination="YYe-P4-MJ8" kind="modal" identifier="StartingActivity" id="wIN-xm-1h4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -469,71 +478,24 @@
             <point key="canvasLocation" x="1605" y="626"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Wn2-b5-u8N">
+        <scene sceneID="Vw5-BL-yqN">
             <objects>
-                <navigationController id="Yl0-Xw-o6A" sceneMemberID="viewController">
+                <navigationController id="YYe-P4-MJ8" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEn-LU-PjH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QJQ-Zk-wOS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="64B-Cd-1Rh" kind="relationship" relationship="rootViewController" id="Uhi-vM-Yq8"/>
+                        <segue destination="64B-Cd-1Rh" kind="relationship" relationship="rootViewController" id="b0g-uK-twt"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VwT-6r-lgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DEu-RH-3eq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2553" y="246"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TFActivityCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFActivityCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TFDashboardViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFDashboardViewController.h"/>
-        </class>
-        <class className="TFNewActivityViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFNewActivityViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="activityDateTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="activityMembersTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="activityNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="activityTimeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="TFSelectActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFSelectActivityViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="start:"/>
-                <relationship kind="outlet" name="selectActivityDateTextBox" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectActivityMembersTextBox" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectActivityNameTextBox" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectActivityTimeTextBox" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="TFViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundClick:"/>
-                <relationship kind="action" name="loginClicked:"/>
-                <relationship kind="outlet" name="txtPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtUsername" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

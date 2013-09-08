@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Activity.h"
+#import "TFRunningActivityViewController.h"
 
 
 @class TFSelectActivityViewController;
@@ -17,7 +18,7 @@
 - (void)selectActivityViewControllerDidStart: (TFSelectActivityViewController *)controller;
 @end
 
-@interface TFSelectActivityViewController : UIViewController
+@interface TFSelectActivityViewController : UIViewController <TFRunningActivityViewControllerDelegate>
 @property (nonatomic, weak) id <TFSelectActivityViewControllerDelegate> delegate;
 @property (nonatomic, strong) Activity *myActivity;
 @property (strong, nonatomic) IBOutlet UITextField *selectActivityNameTextBox;

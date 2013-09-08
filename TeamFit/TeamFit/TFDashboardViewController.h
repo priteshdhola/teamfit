@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TFNewActivityViewController.h"
-#import "TFOpenActivityViewController.h"
+#import "TFSelectActivityViewController.h"
 
-@interface TFDashboardViewController : UITableViewController <TFNewActivityViewControllerDelegate, TFOpenActivityViewControllerDelegate>
+@interface TFDashboardViewController : UITableViewController <TFNewActivityViewControllerDelegate, TFSelectActivityViewControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *activities;
-
+- (Activity *)objectInListAtIndex:(NSUInteger)theIndex;
 @end

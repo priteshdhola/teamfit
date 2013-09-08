@@ -9,7 +9,7 @@
 #import "TFDashboardViewController.h"
 #import "Activity.h"
 #import "TFActivityCell.h"
-#import "TFOpenActivityViewController.h"
+#import "TFSelectActivityViewController.h"
 
 @interface TFDashboardViewController ()
 
@@ -151,6 +151,7 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    [self performSegueWithIdentifier:@"OpenActivity" sender:self];
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -172,12 +173,12 @@
 
 
 // Open an activity 
-- (void)openActivityViewControllerDidCancel: (TFOpenActivityViewController *)controller
+- (void)selectActivityViewControllerDidCancel: (TFSelectActivityViewController *)controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)openActivityViewControllerDidStart: (TFOpenActivityViewController *)controller
+- (void)selectActivityViewControllerDidStart: (TFSelectActivityViewController *)controller
 {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -193,10 +194,9 @@
     }
     else if ([segue.identifier isEqualToString:@"OpenActivity"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        TFOpenActivityViewController *openActvitiyViewController = [[navigationController viewControllers] objectAtIndex:0];
-        openActvitiyViewController.openActivityNameTextLabel.text = @"TEMP";
-        openActvitiyViewController.openActivityDateTextLabel.text = @"TEMP";
-        openActvitiyViewController.openActivityTimeTextLabel.text = @"TEMP";
+        TFSelectActivityViewController *openActvitiyViewController = [[navigationController viewControllers] objectAtIndex:0];
+        NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+        openActvitiyViewController.myActivity = [activities objectAtIndex:selectedRowIndex.row];
         openActvitiyViewController.delegate = self;
     }
 }

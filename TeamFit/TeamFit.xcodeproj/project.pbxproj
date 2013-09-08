@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */; };
-		21BF56C517D5A9D100D2A6DB /* TFOpenActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C417D5A9D100D2A6DB /* TFOpenActivityViewController.m */; };
+		21BF56C817DC036E00D2A6DB /* TFSelectActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C717DC036E00D2A6DB /* TFSelectActivityViewController.m */; };
 		21CDC65117D5464B002116CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC65017D5464B002116CE /* UIKit.framework */; };
 		21CDC65317D5464B002116CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC65217D5464B002116CE /* Foundation.framework */; };
 		21CDC65517D5464B002116CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CDC65417D5464B002116CE /* CoreGraphics.framework */; };
@@ -55,8 +55,8 @@
 /* Begin PBXFileReference section */
 		21BF56C017D5859600D2A6DB /* TFNewActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFNewActivityViewController.h; sourceTree = "<group>"; };
 		21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFNewActivityViewController.m; sourceTree = "<group>"; };
-		21BF56C317D5A9D100D2A6DB /* TFOpenActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFOpenActivityViewController.h; sourceTree = "<group>"; };
-		21BF56C417D5A9D100D2A6DB /* TFOpenActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFOpenActivityViewController.m; sourceTree = "<group>"; };
+		21BF56C617DC036D00D2A6DB /* TFSelectActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSelectActivityViewController.h; sourceTree = "<group>"; };
+		21BF56C717DC036E00D2A6DB /* TFSelectActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSelectActivityViewController.m; sourceTree = "<group>"; };
 		21CDC64D17D5464B002116CE /* TeamFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CDC65017D5464B002116CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21CDC65217D5464B002116CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,22 +170,22 @@
 		21CDC65617D5464B002116CE /* TeamFit */ = {
 			isa = PBXGroup;
 			children = (
-				21BF56C317D5A9D100D2A6DB /* TFOpenActivityViewController.h */,
-				21BF56C417D5A9D100D2A6DB /* TFOpenActivityViewController.m */,
+				21BF56C617DC036D00D2A6DB /* TFSelectActivityViewController.h */,
+				21BF56C717DC036E00D2A6DB /* TFSelectActivityViewController.m */,
 				21BF56C017D5859600D2A6DB /* TFNewActivityViewController.h */,
 				21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */,
-				21CDC6B917D57720002116CE /* TFActivityCell.h */,
-				21CDC6BA17D57720002116CE /* TFActivityCell.m */,
-				21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */,
 				21CDC6B117D54886002116CE /* TFDashboardViewController.h */,
 				21CDC6B217D54886002116CE /* TFDashboardViewController.m */,
-				21CDC65F17D5464B002116CE /* TFAppDelegate.h */,
-				21CDC66017D5464B002116CE /* TFAppDelegate.m */,
 				21CDC66B17D5464B002116CE /* TFViewController.h */,
 				21CDC66C17D5464B002116CE /* TFViewController.m */,
+				21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */,
+				21CDC65F17D5464B002116CE /* TFAppDelegate.h */,
+				21CDC66017D5464B002116CE /* TFAppDelegate.m */,
 				21CDC65717D5464B002116CE /* Supporting Files */,
 				21CDC6B617D54F72002116CE /* Activity.h */,
 				21CDC6B717D54F72002116CE /* Activity.m */,
+				21CDC6B917D57720002116CE /* TFActivityCell.h */,
+				21CDC6BA17D57720002116CE /* TFActivityCell.m */,
 			);
 			path = TeamFit;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 				21CDC6B817D54F72002116CE /* Activity.m in Sources */,
 				21CDC6BB17D57721002116CE /* TFActivityCell.m in Sources */,
 				21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */,
-				21BF56C517D5A9D100D2A6DB /* TFOpenActivityViewController.m in Sources */,
+				21BF56C817DC036E00D2A6DB /* TFSelectActivityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

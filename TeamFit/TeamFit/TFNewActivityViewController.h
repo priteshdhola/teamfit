@@ -16,7 +16,7 @@
 - (void)newActivityViewController: (TFNewActivityViewController *)controller didAddActivity:(Activity *)activity;
 @end
 
-@interface TFNewActivityViewController : UITableViewController
+@interface TFNewActivityViewController : UIViewController <TFNewActivityViewControllerDelegate>
 @property (nonatomic, weak) id <TFNewActivityViewControllerDelegate> delegate;
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

@@ -20,6 +20,9 @@
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, weak) id <TFRunningActivityViewControllerDelegate> delegate;
+@property (nonatomic, retain) IBOutlet UILabel *timerLabel;
+@property (nonatomic, retain) NSTimer *stopTimer;
+@property (nonatomic, retain) NSDate *startDate;
 
 - (IBAction)end:(id)sender;
 

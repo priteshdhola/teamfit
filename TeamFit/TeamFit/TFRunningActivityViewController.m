@@ -7,6 +7,7 @@
 //
 
 #import "TFRunningActivityViewController.h"
+#define kPollingInterval 1.0
 
 @interface TFRunningActivityViewController ()
 
@@ -14,6 +15,9 @@
 
 @implementation TFRunningActivityViewController
 @synthesize mapView;
+@synthesize timerLabel;
+@synthesize startDate;
+@synthesize stopTimer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +33,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.mapView.delegate = self;
+    startDate = [NSDate date];
+    stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
+                                                 target:self
+                                               selector:@selector(updateTimer)
+                                               userInfo:nil
+                                                repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,13 +48,24 @@
 }
 - (IBAction)end:(id)sender
 {
-    [self.delegate runningActivityViewControllerDidEnd:self];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+//    [self.delegate runningActivityViewControllerDidEnd:self];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+}
+-(void)updateTimer{
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"mm:ss"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString=[dateFormatter stringFromDate:timerDate];
+    self.timerLabel.text = timeString;
 }
 
 @end

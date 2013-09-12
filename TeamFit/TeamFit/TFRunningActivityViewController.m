@@ -48,8 +48,9 @@
 }
 - (IBAction)end:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-//    [self.delegate runningActivityViewControllerDidEnd:self];
+ //   [self.delegate runningActivityViewControllerDidEnd:self];
+//    [self.navigationController popToRootViewControllerAnimated:TRUE];
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation

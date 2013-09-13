@@ -51,6 +51,7 @@
     activity.time = @"8:00 AM";
 
 	[activities addObject:activity];
+    self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

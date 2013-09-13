@@ -38,6 +38,7 @@
     self.selectActivityNameTextBox.text = myActivity.name;
     self.selectActivityDateTextBox.text = myActivity.date;
     self.selectActivityTimeTextBox.text = myActivity.time;
+    self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning

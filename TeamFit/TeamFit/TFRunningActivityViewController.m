@@ -39,6 +39,7 @@
                                                selector:@selector(updateTimer)
                                                userInfo:nil
                                                 repeats:YES];
+    self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning

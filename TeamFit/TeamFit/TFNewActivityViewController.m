@@ -16,6 +16,11 @@
 
 @implementation TFNewActivityViewController
 @synthesize delegate;
+@synthesize datePicker;
+@synthesize dateValue;
+@synthesize timeValue;
+@synthesize dateandtime;
+@synthesize activityDateTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,12 +35,12 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    activityDateTextField.delegate = self;
+    
+    datePicker = [[UIDatePicker alloc]init];
+    [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
+    datePicker.minuteInterval = 15;
+    self.activityDateTextField.inputView = datePicker;
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,13 +72,44 @@
 }
 - (IBAction)done:(id)sender
 {
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    dateandtime = [datePicker date];
+    
+    [format setDateFormat:@"MM/dd/yyyy"];
+    dateValue = [format stringFromDate:dateandtime];
+//    NSLog(@"%@",dateValue);
+    
+    [format setDateFormat:@"hh:mm a"];
+    timeValue = [format stringFromDate:dateandtime];
+//    NSLog(@"%@",timeValue);
+    self.activityDateTextField.text = dateValue;
+    
     Activity *activity = [[Activity alloc] init];
 	activity.name = self.activityNameTextField.text;
-	activity.date = self.activityDateTextField.text;;
-    activity.time = self.activityTimeTextField.text;;
-	//activity.friends = self.activityMembersTextField.text;;
+    activity.date = dateValue;
+    activity.time = timeValue;
+//    activity.friends = self.activityMembersTextField.text;
 
+//	activity.date = self.activityDateTextField.text;;
+//    activity.time = self.activityTimeTextField.text;;
+    
 	[self.delegate newActivityViewController:self didAddActivity:activity];    
+}
+
+- (IBAction)dateChanged:(id)sender {
+    datePicker = (UIDatePicker *)sender;
+    self.activityDateTextField.text = [NSString stringWithFormat:@"%@", datePicker.date];
+    [activityDateTextField resignFirstResponder];
+}
+- (IBAction)doneEditing:(id)sender {
+    [self.activityDateTextField resignFirstResponder];
+    //[textField resignFirstResponder];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.activityDateTextField) {
+        [theTextField resignFirstResponder];        
+    }
+    return YES;
 }
 
 @end

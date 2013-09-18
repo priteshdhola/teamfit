@@ -168,11 +168,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKO-5z-yms">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dM5-YJ-buf">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -182,14 +177,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mJ-Qw-nrp">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="qKb-CS-UhH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae8-C0-xr0">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date/Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae8-C0-xr0">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -201,26 +189,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.69164482194016119" blue="0.11210882104498565" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ae8-C0-xr0" firstAttribute="leading" secondItem="ojw-js-1Rc" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="28M-c1-3dp"/>
+                            <constraint firstItem="ae8-C0-xr0" firstAttribute="leading" secondItem="ojw-js-1Rc" secondAttribute="leading" constant="15" id="1Pd-GS-j96"/>
+                            <constraint firstItem="dM5-YJ-buf" firstAttribute="leading" secondItem="aRU-Bg-Zqs" secondAttribute="leading" type="default" id="30A-UU-KHA"/>
+                            <constraint firstItem="dM5-YJ-buf" firstAttribute="trailing" secondItem="aRU-Bg-Zqs" secondAttribute="trailing" type="default" id="4zm-fQ-Bir"/>
                             <constraint firstItem="ymu-D8-nix" firstAttribute="leading" secondItem="ojw-js-1Rc" secondAttribute="leading" constant="100" id="8JH-Bt-5Mc"/>
-                            <constraint firstItem="0mJ-Qw-nrp" firstAttribute="trailing" secondItem="dM5-YJ-buf" secondAttribute="trailing" type="default" id="Cl5-P7-b2z"/>
-                            <constraint firstItem="aRU-Bg-Zqs" firstAttribute="top" secondItem="ojw-js-1Rc" secondAttribute="top" constant="63" id="GqL-f7-EEZ"/>
-                            <constraint firstItem="AKO-5z-yms" firstAttribute="leading" secondItem="ojw-js-1Rc" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="JhB-tW-kRs"/>
-                            <constraint firstItem="xfr-Jn-enN" firstAttribute="leading" secondItem="ojw-js-1Rc" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="O89-bh-oFW"/>
+                            <constraint firstItem="dM5-YJ-buf" firstAttribute="trailing" secondItem="ymu-D8-nix" secondAttribute="trailing" type="default" id="Ed8-oE-BdH"/>
+                            <constraint firstItem="dM5-YJ-buf" firstAttribute="top" secondItem="ojw-js-1Rc" secondAttribute="top" constant="63" id="Em2-hV-w7f"/>
+                            <constraint firstItem="ae8-C0-xr0" firstAttribute="leading" secondItem="xfr-Jn-enN" secondAttribute="leading" type="default" id="HI1-Y7-tYV"/>
+                            <constraint firstItem="xfr-Jn-enN" firstAttribute="leading" secondItem="7ZD-Fx-kHb" secondAttribute="leading" type="default" id="JLj-Ek-sLb"/>
                             <constraint firstItem="ae8-C0-xr0" firstAttribute="baseline" secondItem="aRU-Bg-Zqs" secondAttribute="baseline" type="default" id="Si2-gO-tVc"/>
-                            <constraint firstItem="aRU-Bg-Zqs" firstAttribute="trailing" secondItem="0mJ-Qw-nrp" secondAttribute="trailing" type="default" id="TDE-58-wQj"/>
-                            <constraint firstItem="AKO-5z-yms" firstAttribute="top" secondItem="ojw-js-1Rc" secondAttribute="top" constant="117" id="TPi-hJ-ORz"/>
-                            <constraint firstItem="dM5-YJ-buf" firstAttribute="top" secondItem="ojw-js-1Rc" secondAttribute="top" constant="163" id="X3X-xM-RnU"/>
-                            <constraint firstItem="aRU-Bg-Zqs" firstAttribute="leading" secondItem="0mJ-Qw-nrp" secondAttribute="leading" type="default" id="Z4A-mh-7e4"/>
-                            <constraint firstItem="ymu-D8-nix" firstAttribute="trailing" secondItem="aRU-Bg-Zqs" secondAttribute="trailing" type="default" id="ZAT-Ej-ftT"/>
                             <constraint firstItem="7ZD-Fx-kHb" firstAttribute="top" secondItem="ojw-js-1Rc" secondAttribute="top" constant="20" symbolic="YES" type="default" id="fh8-YL-umD"/>
-                            <constraint firstItem="ymu-D8-nix" firstAttribute="leading" secondItem="aRU-Bg-Zqs" secondAttribute="leading" type="default" id="k6X-tl-ijA"/>
-                            <constraint firstItem="xfr-Jn-enN" firstAttribute="top" secondItem="ojw-js-1Rc" secondAttribute="top" constant="167" id="nuc-xd-yu1"/>
-                            <constraint firstItem="0mJ-Qw-nrp" firstAttribute="top" secondItem="ojw-js-1Rc" secondAttribute="top" constant="113" id="rve-mE-DpS"/>
+                            <constraint firstItem="xfr-Jn-enN" firstAttribute="baseline" secondItem="dM5-YJ-buf" secondAttribute="baseline" type="default" id="gII-uS-Vb2"/>
+                            <constraint firstItem="dM5-YJ-buf" firstAttribute="leading" secondItem="ymu-D8-nix" secondAttribute="leading" type="default" id="iYY-ND-IXm"/>
+                            <constraint firstItem="aRU-Bg-Zqs" firstAttribute="top" secondItem="ojw-js-1Rc" secondAttribute="top" constant="110" id="qc6-xT-4fX"/>
                             <constraint firstItem="ymu-D8-nix" firstAttribute="baseline" secondItem="7ZD-Fx-kHb" secondAttribute="baseline" type="default" id="uXx-YZ-gAE"/>
-                            <constraint firstItem="0mJ-Qw-nrp" firstAttribute="leading" secondItem="dM5-YJ-buf" secondAttribute="leading" type="default" id="xuC-uZ-ic8"/>
-                            <constraint firstItem="AKO-5z-yms" firstAttribute="baseline" secondItem="0mJ-Qw-nrp" secondAttribute="baseline" type="default" id="z2A-Pi-pOs"/>
-                            <constraint firstItem="7ZD-Fx-kHb" firstAttribute="leading" secondItem="ojw-js-1Rc" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="zyT-nE-RKh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2HZ-GM-KkV">
@@ -239,7 +221,6 @@
                         <outlet property="activityDateTextField" destination="aRU-Bg-Zqs" id="2nc-au-A4v"/>
                         <outlet property="activityMembersTextField" destination="dM5-YJ-buf" id="Mew-e2-pCP"/>
                         <outlet property="activityNameTextField" destination="ymu-D8-nix" id="MLo-Qk-FKb"/>
-                        <outlet property="activityTimeTextField" destination="0mJ-Qw-nrp" id="Jt9-M2-kXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiZ-Sx-hpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -498,61 +479,6 @@
             <point key="canvasLocation" x="1611" y="-123"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="TFActivityCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFActivityCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TFDashboardViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFDashboardViewController.h"/>
-        </class>
-        <class className="TFNewActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFNewActivityViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="activityDateTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="activityMembersTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="activityNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="activityTimeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="TFRunningActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFRunningActivityViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="end:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TFSelectActivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFSelectActivityViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="start:"/>
-                <relationship kind="outlet" name="selectActivityDateTextBox" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectActivityMembersTextBox" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectActivityNameTextBox" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectActivityTimeTextBox" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="TFViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TFViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundClick:"/>
-                <relationship kind="action" name="loginClicked:"/>
-                <relationship kind="outlet" name="txtPassword" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtUsername" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

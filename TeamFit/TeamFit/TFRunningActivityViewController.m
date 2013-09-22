@@ -9,15 +9,9 @@
 #import "TFRunningActivityViewController.h"
 #define kPollingInterval 1.0
 
-@interface TFRunningActivityViewController ()
-
-@end
 
 @implementation TFRunningActivityViewController
-@synthesize mapView;
-@synthesize timerLabel;
-@synthesize startDate;
-@synthesize stopTimer;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,8 +27,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.mapView.delegate = self;
-    startDate = [NSDate date];
-    stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
+    self.startDate = [NSDate date];
+    self.stopTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0
                                                  target:self
                                                selector:@selector(updateTimer)
                                                userInfo:nil
@@ -61,7 +55,7 @@
 }
 -(void)updateTimer{
     NSDate *currentDate = [NSDate date];
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:startDate];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"mm:ss"];

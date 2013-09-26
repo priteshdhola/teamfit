@@ -24,6 +24,8 @@
 @property (nonatomic, retain) NSTimer *stopTimer;
 @property (nonatomic, retain) NSDate *startDate;
 
+@property (nonatomic, strong) NSMutableArray *mylocations;
+
 - (IBAction)end:(id)sender;
 
 @end

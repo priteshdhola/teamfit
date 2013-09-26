@@ -12,6 +12,9 @@
 
 @implementation TFRunningActivityViewController
 
+#define METERS_PER_MILE 1609.344
+
+@synthesize mylocations;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +37,7 @@
                                                userInfo:nil
                                                 repeats:YES];
     self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
+    self.mylocations = [[NSMutableArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,11 +52,6 @@
     [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-}
 -(void)updateTimer{
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
@@ -62,6 +61,57 @@
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     NSString *timeString=[dateFormatter stringFromDate:timerDate];
     self.timerLabel.text = timeString;
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    
+    CLLocationCoordinate2D curCoordinate = userLocation.coordinate;
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(curCoordinate, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    
+    //store current location into array
+    [self.mylocations addObject: [NSValue valueWithMKCoordinate: curCoordinate]];
+    
+    // while we create the route points, we will also be calculating the bounding box of our route
+    // so we can easily zoom in on it.
+    MKMapPoint northEastPoint;
+    MKMapPoint southWestPoint;
+    
+    // create a c array of points.
+    // MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * mylocations.count);
+    CLLocationCoordinate2D coordinates[mylocations.count];
+    
+    for(int idx = 0; idx < mylocations.count; idx++)
+    {
+        NSValue * val = [mylocations objectAtIndex:idx];
+        CLLocationCoordinate2D coordinate = val.MKCoordinateValue;
+        coordinates[idx] = coordinate;
+        //        MKMapPoint point = MKMapPointForCoordinate([mylocations objectAtIndex:idx]);
+        
+    }
+    
+    MKPolyline *polyline = [MKPolyline polylineWithCoordinates:coordinates count:self.mylocations.count];
+    
+    [_mapView addOverlay:polyline];
+    
+    // Add an annotation
+    /* MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+     point.coordinate = userLocation.coordinate;
+     point.title = @"Where am I?";
+     point.subtitle = @"I'm here!!!";
+     
+     [self.mapView addAnnotation:point];
+     */
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
+    MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
+    polylineView.strokeColor = [UIColor redColor];
+    polylineView.lineWidth = 5.0;
+    
+    return polylineView;
 }
 
 @end

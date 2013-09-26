@@ -10,6 +10,8 @@
 #import "Activity.h"
 #import "TFActivityCell.h"
 #import "TFSelectActivityViewController.h"
+//#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+//#define getAllActivitiesURL [NSURL URLWithString:@"http://localhost:8080/tracksafe/activities"]
 
 @interface TFDashboardViewController ()
 
@@ -19,7 +21,7 @@
     NSMutableArray *activities;
 }
 @synthesize activities;
-
+    
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -32,33 +34,142 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     activities = [NSMutableArray arrayWithCapacity:20];
-	Activity *activity = [[Activity alloc] init];
-	activity.name = @"Morning Group Run";
-	activity.date = @"05/06/2013";
-    activity.time = @"8:30 AM";
 
-	[activities addObject:activity];
-	activity = [[Activity alloc] init];
-	activity.name = @"Local Solo Run";
-	activity.date = @"06/07/2013";
-    activity.time = @"8:00 AM";
-
-	[activities addObject:activity];
-	activity = [[Activity alloc] init];
-	activity.name = @"Marathon Day";
-	activity.date = @"07/08/2013";
-    activity.time = @"8:00 AM";
-
-	[activities addObject:activity];
+//    dispatch_async(kBgQueue, ^{NSData* data = [NSData dataWithContentsOfURL: getAllActivitiesURL];
+//    [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
+//    });
+    NSString* serverAddress = @"http://localhost:8080/tracksafe/activities";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    [request setHTTPMethod: @"GET"];
+    
+    NSError *requestError;
+    NSURLResponse *urlResponse = nil;
+        
+    NSData *apiResponse = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    //[self parseResponseData:apiResponse];
+    
+    /////////////////////
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:apiResponse options:kNilOptions error:&error];
+    NSDictionary* allData = [json objectForKey:@"activityDataList"];
+    NSArray* allActivities = [allData objectForKey:@"activityData"];
+    
+    NSDictionary* jsonActivity;
+    NSString* name;
+    NSString* type;
+    NSString* dateAndTime;
+    NSArray* foo;
+    NSString* dateValue;
+    NSString* timeValue;
+    Activity *activity;
+    
+    for (int i = 0; i < [allActivities count]; i++)
+    {
+        jsonActivity = [allActivities objectAtIndex:i];
+        
+        name = [jsonActivity objectForKey:@"name"];
+        type = [jsonActivity objectForKey:@"type"];
+        dateAndTime = [jsonActivity objectForKey:@"createdDate"];
+        foo = [dateAndTime componentsSeparatedByString: @"T"];
+        dateValue = [foo objectAtIndex: 0];
+        timeValue = [foo objectAtIndex: 1];
+        foo = [timeValue componentsSeparatedByString: @"-"];
+        timeValue = [foo objectAtIndex: 0];
+        
+        activity = [[Activity alloc] init];
+        activity.name = name;
+        activity.date = dateValue;
+        activity.time = timeValue;
+        [activities addObject:activity];
+    }
+    
+    /////////////////////////////////////////
+    
+//	activity = [[Activity alloc] init];
+//	activity.name = @"Morning Group Run";
+//	activity.date = @"05/06/2013";
+//    activity.time = @"8:30 AM";
+//	[activities addObject:activity];
+//    
+//	activity = [[Activity alloc] init];
+//	activity.name = @"Local Solo Run";
+//	activity.date = @"06/07/2013";
+//    activity.time = @"8:00 AM";
+//	[activities addObject:activity];
+//    
+//	activity = [[Activity alloc] init];
+//	activity.name = @"Marathon Day";
+//	activity.date = @"07/08/2013";
+//    activity.time = @"8:00 AM";
+//	[activities addObject:activity];
+    
     self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+//+ (void)parseResponseData:(NSData *)responseData {
+//    //parse out the json data
+//    NSError* error;
+//    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+//    NSDictionary* allData = [json objectForKey:@"activityDataList"];
+//    NSArray* allActivities = [allData objectForKey:@"activityData"];
+//    
+//    NSDictionary* jsonActivity;
+//    NSString* name;
+//    NSString* type;
+//    NSString* dateAndTime;
+//    NSArray* foo;
+//    NSString* dateValue;
+//    NSString* timeValue;
+//    Activity *activity;
+//    //int dataSize = sizeof(allActivities);
+//    
+//    for (int i = 0; i < [allActivities count]; i++)
+//    {        
+//        jsonActivity = [allActivities objectAtIndex:i];
+//    
+//        name = [jsonActivity objectForKey:@"name"];
+//        type = [jsonActivity objectForKey:@"type"];
+//        dateAndTime = [jsonActivity objectForKey:@"createdDate"];
+//        foo = [dateAndTime componentsSeparatedByString: @"T"];
+//        dateValue = [foo objectAtIndex: 0];
+//        timeValue = [foo objectAtIndex: 1];
+//        foo = [timeValue componentsSeparatedByString: @"-"];
+//        timeValue = [foo objectAtIndex: 0];
+//        
+//        activity = [[Activity alloc] init];
+//        activity.name = name;
+//        activity.date = dateValue;
+//        activity.time = timeValue;
+//        [activities addObject:activity];
+//    }
+//    
+////--------------------------------------------------------------------
+////    //NSDate* myDate = [NSDate dateWithTimeIntervalSinceReferenceDate:343675999.713839];
+////    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+////    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+////    [dateFormatter setCalendar:calendar];
+////    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+////    [dateFormatter setLocale:locale];
+////    NSTimeZone *timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+////    [dateFormatter setTimeZone:timeZone];
+////    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+////    NSString* dateValue = [dateFormatter stringFromDate:dateAndTime];
+////----------------------------------------------------------------------
+////    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+////    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+////    NSDate *dateValue = [dateFormatter dateFromString:dateAndTime];
+////-----------------------------------------------------------------------
+//
+//    
+////    NSLog(@"%@",date);
+////    NSLog(@"%@",time);
+////    NSLog(@"%@",name);
+////    NSLog(@"%@",type);    
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -85,6 +196,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     TFActivityCell *cell = (TFActivityCell *)[tableView dequeueReusableCellWithIdentifier:@"ActivityCell"];
+    NSLog(@"%lu",(unsigned long)[activities count]);
 	Activity *activity = [self.activities objectAtIndex:indexPath.row];
 	cell.nameLabel.text = activity.name;
 	cell.dateLabel.text = activity.date;
@@ -163,14 +275,42 @@
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
+//- (void)newActivityViewController: (TFNewActivityViewController *)controller didAddActivity:(Activity *)activity
+//{
+//	[self.activities addObject:activity];
+//	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.activities count] - 1 inSection:0];
+//	[self.tableView insertRowsAtIndexPaths:
+//     [NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//	[self dismissViewControllerAnimated:YES completion:nil];
+//}
 - (void)newActivityViewController: (TFNewActivityViewController *)controller didAddActivity:(Activity *)activity
 {
+    NSString *soapFormat = [NSString stringWithFormat:@"{\"activityData\": {\"name\": \"Morning Run\",\"type\": \"1\",\"startDate\": \"2013-09-10 14:14:36\"}}"];
+    
+    NSLog(@"The request format is %@",soapFormat);
+    NSURL *locationOfWebService = [NSURL URLWithString:@"http://localhost:8080/tracksafe/activities"];
+    NSLog(@"web url = %@",locationOfWebService);
+    NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc]initWithURL:locationOfWebService];
+    NSString *msgLength = [NSString stringWithFormat:@"%d",[soapFormat length]];
+    [theRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody:[soapFormat dataUsingEncoding:NSUTF8StringEncoding]];
+    NSURLConnection *connect = [[NSURLConnection alloc]initWithRequest:theRequest delegate:self];
+    if (connect) {
+        NSMutableData* webData = [[NSMutableData alloc]init];
+        NSLog(@"Response %@: ",webData);
+    }
+    else {
+        NSLog(@"No Connection established");
+    }
+        
 	[self.activities addObject:activity];
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.activities count] - 1 inSection:0];
 	[self.tableView insertRowsAtIndexPaths:
      [NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 
 // Open an activity 

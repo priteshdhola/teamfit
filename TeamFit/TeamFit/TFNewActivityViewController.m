@@ -79,7 +79,8 @@
     dateValue = [format stringFromDate:dateandtime];
 //    NSLog(@"%@",dateValue);
     
-    [format setDateFormat:@"hh:mm a"];
+//    [format setDateFormat:@"hh:mm a"];
+    [format setDateFormat:@"hh:mm"];
     timeValue = [format stringFromDate:dateandtime];
 //    NSLog(@"%@",timeValue);
     self.activityDateTextField.text = dateValue;

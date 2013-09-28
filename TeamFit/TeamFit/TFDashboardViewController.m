@@ -224,13 +224,12 @@
 /******************************** POST REQUEST TO CREATE ACTIVITY ***********************/
 - (void)newActivityViewController: (TFNewActivityViewController *)controller didAddActivity:(Activity *)activity
 {
-    NSString *soapFormat = [NSString stringWithFormat:@"{\"activityData\": {\"name\": \"Morning Run\",\"type\": \"1\",\"startDate\": \"2013-09-10 14:14:36\"}}"];
+    NSString *soapFormat = [NSString stringWithFormat:@"{\"activityData\": {\"name\": \"%@\",\"type\": \"1\",\"startDate\": \"%@ %@\"}}",activity.name,activity.date,activity.time];
     
     NSLog(@"The request format is %@",soapFormat);
     NSURL *locationOfWebService = [NSURL URLWithString:@"http://localhost:8080/tracksafe/activities"];
     NSLog(@"web url = %@",locationOfWebService);
     NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc]initWithURL:locationOfWebService];
-    NSString *msgLength = [NSString stringWithFormat:@"%d",[soapFormat length]];
     [theRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [theRequest setHTTPMethod:@"POST"];
     [theRequest setHTTPBody:[soapFormat dataUsingEncoding:NSUTF8StringEncoding]];

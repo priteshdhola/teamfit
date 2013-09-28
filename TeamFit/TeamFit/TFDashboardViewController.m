@@ -10,8 +10,6 @@
 #import "Activity.h"
 #import "TFActivityCell.h"
 #import "TFSelectActivityViewController.h"
-//#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-//#define getAllActivitiesURL [NSURL URLWithString:@"http://localhost:8080/tracksafe/activities"]
 
 @interface TFDashboardViewController ()
 
@@ -36,10 +34,6 @@
     [super viewDidLoad];
 
     activities = [NSMutableArray arrayWithCapacity:20];
-
-//    dispatch_async(kBgQueue, ^{NSData* data = [NSData dataWithContentsOfURL: getAllActivitiesURL];
-//    [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
-//    });
     NSString* serverAddress = @"http://localhost:8080/tracksafe/activities";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverAddress]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -50,9 +44,8 @@
     NSURLResponse *urlResponse = nil;
         
     NSData *apiResponse = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
-    //[self parseResponseData:apiResponse];
     
-    /////////////////////
+    ///////////////////////// MAKING THE GET REQUEST AND PARSING THE DATA /////////////////////////////
     NSError* error;
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:apiResponse options:kNilOptions error:&error];
     NSDictionary* allData = [json objectForKey:@"activityDataList"];
@@ -86,8 +79,10 @@
         activity.time = timeValue;
         [activities addObject:activity];
     }
+    self.navigationController.navigationBar.barTintColor  = [UIColor blackColor];
+
     
-    /////////////////////////////////////////
+    /******************************* HARD CODED DATA *******************************/
     
 //	activity = [[Activity alloc] init];
 //	activity.name = @"Morning Group Run";
@@ -107,69 +102,8 @@
 //    activity.time = @"8:00 AM";
 //	[activities addObject:activity];
     
-    self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
+    /********************************************************************************/
 }
-
-//+ (void)parseResponseData:(NSData *)responseData {
-//    //parse out the json data
-//    NSError* error;
-//    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-//    NSDictionary* allData = [json objectForKey:@"activityDataList"];
-//    NSArray* allActivities = [allData objectForKey:@"activityData"];
-//    
-//    NSDictionary* jsonActivity;
-//    NSString* name;
-//    NSString* type;
-//    NSString* dateAndTime;
-//    NSArray* foo;
-//    NSString* dateValue;
-//    NSString* timeValue;
-//    Activity *activity;
-//    //int dataSize = sizeof(allActivities);
-//    
-//    for (int i = 0; i < [allActivities count]; i++)
-//    {        
-//        jsonActivity = [allActivities objectAtIndex:i];
-//    
-//        name = [jsonActivity objectForKey:@"name"];
-//        type = [jsonActivity objectForKey:@"type"];
-//        dateAndTime = [jsonActivity objectForKey:@"createdDate"];
-//        foo = [dateAndTime componentsSeparatedByString: @"T"];
-//        dateValue = [foo objectAtIndex: 0];
-//        timeValue = [foo objectAtIndex: 1];
-//        foo = [timeValue componentsSeparatedByString: @"-"];
-//        timeValue = [foo objectAtIndex: 0];
-//        
-//        activity = [[Activity alloc] init];
-//        activity.name = name;
-//        activity.date = dateValue;
-//        activity.time = timeValue;
-//        [activities addObject:activity];
-//    }
-//    
-////--------------------------------------------------------------------
-////    //NSDate* myDate = [NSDate dateWithTimeIntervalSinceReferenceDate:343675999.713839];
-////    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-////    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-////    [dateFormatter setCalendar:calendar];
-////    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-////    [dateFormatter setLocale:locale];
-////    NSTimeZone *timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-////    [dateFormatter setTimeZone:timeZone];
-////    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-////    NSString* dateValue = [dateFormatter stringFromDate:dateAndTime];
-////----------------------------------------------------------------------
-////    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-////    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-////    NSDate *dateValue = [dateFormatter dateFromString:dateAndTime];
-////-----------------------------------------------------------------------
-//
-//    
-////    NSLog(@"%@",date);
-////    NSLog(@"%@",time);
-////    NSLog(@"%@",name);
-////    NSLog(@"%@",type);    
-//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -267,7 +201,7 @@
     [self performSegueWithIdentifier:@"OpenActivity" sender:self];
 }
 
-//////////////////////////////////////////////////////////////////////////
+/********************************************************************************/
 
 // Create an activity
 - (void)newActivityViewControllerDidCancel: (TFNewActivityViewController *)controller
@@ -275,6 +209,7 @@
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/******************************** HARD CODED ADD ACTIVITY ***********************/
 //- (void)newActivityViewController: (TFNewActivityViewController *)controller didAddActivity:(Activity *)activity
 //{
 //	[self.activities addObject:activity];
@@ -283,6 +218,10 @@
 //     [NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //	[self dismissViewControllerAnimated:YES completion:nil];
 //}
+/********************************************************************************/
+
+
+/******************************** POST REQUEST TO CREATE ACTIVITY ***********************/
 - (void)newActivityViewController: (TFNewActivityViewController *)controller didAddActivity:(Activity *)activity
 {
     NSString *soapFormat = [NSString stringWithFormat:@"{\"activityData\": {\"name\": \"Morning Run\",\"type\": \"1\",\"startDate\": \"2013-09-10 14:14:36\"}}"];

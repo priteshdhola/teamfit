@@ -36,7 +36,7 @@
                                                selector:@selector(updateTimer)
                                                userInfo:nil
                                                 repeats:YES];
-    self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
+    self.navigationController.navigationBar.barTintColor  = [UIColor blackColor];
     self.mylocations = [[NSMutableArray alloc]init];
 }
 

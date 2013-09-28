@@ -34,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.tintColor  = [UIColor blackColor];
+    self.navigationController.navigationBar.barTintColor  = [UIColor blackColor];
     activityDateTextField.delegate = self;
     
     datePicker = [[UIDatePicker alloc]init];

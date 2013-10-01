@@ -229,7 +229,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAt-yK-5Od">
-                                <rect key="frame" x="8" y="7.9999999958833374" width="305" height="311"/>
+                                <rect key="frame" x="8" y="8.0000000008649721" width="305" height="311"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="305" id="afc-Ox-Bew"/>
                                     <constraint firstAttribute="height" constant="311" id="uPs-3M-w2B"/>

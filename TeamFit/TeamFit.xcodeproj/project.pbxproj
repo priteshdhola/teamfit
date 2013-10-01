@@ -43,6 +43,7 @@
 		21CDC6B517D54A0F002116CE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */; };
 		21CDC6B817D54F72002116CE /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6B717D54F72002116CE /* Activity.m */; };
 		21CDC6BB17D57721002116CE /* TFActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6BA17D57720002116CE /* TFActivityCell.m */; };
+		339AAFB617FA89CB00FB9565 /* UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 339AAFB517FA89CB00FB9565 /* UserLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		21CDC6B717D54F72002116CE /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = models/Activity.m; sourceTree = "<group>"; };
 		21CDC6B917D57720002116CE /* TFActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFActivityCell.h; sourceTree = "<group>"; };
 		21CDC6BA17D57720002116CE /* TFActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFActivityCell.m; sourceTree = "<group>"; };
+		339AAFB417FA89CB00FB9565 /* UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLocation.h; path = models/UserLocation.h; sourceTree = "<group>"; };
+		339AAFB517FA89CB00FB9565 /* UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLocation.m; path = models/UserLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,8 +199,6 @@
 				21CDC65F17D5464B002116CE /* TFAppDelegate.h */,
 				21CDC66017D5464B002116CE /* TFAppDelegate.m */,
 				21CDC65717D5464B002116CE /* Supporting Files */,
-				21CDC6B617D54F72002116CE /* Activity.h */,
-				21CDC6B717D54F72002116CE /* Activity.m */,
 				21CDC6B917D57720002116CE /* TFActivityCell.h */,
 				21CDC6BA17D57720002116CE /* TFActivityCell.m */,
 			);
@@ -273,6 +274,10 @@
 		339AAFAD17FA84DC00FB9565 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				21CDC6B617D54F72002116CE /* Activity.h */,
+				21CDC6B717D54F72002116CE /* Activity.m */,
+				339AAFB417FA89CB00FB9565 /* UserLocation.h */,
+				339AAFB517FA89CB00FB9565 /* UserLocation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21CDC65D17D5464B002116CE /* main.m in Sources */,
+				339AAFB617FA89CB00FB9565 /* UserLocation.m in Sources */,
 				21CDC66117D5464B002116CE /* TFAppDelegate.m in Sources */,
 				21CDC66D17D5464B002116CE /* TFViewController.m in Sources */,
 				21CDC6A517D5481F002116CE /* NSObject+SBJson.m in Sources */,

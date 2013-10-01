@@ -181,6 +181,7 @@
 		21CDC65617D5464B002116CE /* TeamFit */ = {
 			isa = PBXGroup;
 			children = (
+				339AAFAD17FA84DC00FB9565 /* Models */,
 				21BF56C617DC036D00D2A6DB /* TFSelectActivityViewController.h */,
 				21BF56C717DC036E00D2A6DB /* TFSelectActivityViewController.m */,
 				21BF56C017D5859600D2A6DB /* TFNewActivityViewController.h */,
@@ -267,6 +268,13 @@
 			);
 			name = json;
 			path = TeamFit/json;
+			sourceTree = "<group>";
+		};
+		339AAFAD17FA84DC00FB9565 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

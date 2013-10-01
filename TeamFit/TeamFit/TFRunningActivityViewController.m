@@ -99,7 +99,7 @@
     
     NSData *requestData = [NSData dataWithBytes:[jsonRequest UTF8String] length:[jsonRequest length]];
     
-    NSInteger randomUserId = (arc4random() % 4) + 1;
+    NSInteger randomUserId = (arc4random() % 2) + 1;
     NSString* baseUrl = [ NSString stringWithFormat: @"http://localhost:8080/tracksafe/activities/1/%ld",(long)randomUserId ];
     
     NSURL *locationOfWebService = [NSURL URLWithString:baseUrl];
@@ -164,16 +164,16 @@
     
     ///////////////////////// MAKING THE GET REQUEST AND PARSING THE DATA /////////////////////////////
     NSError* error2;
-    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:apiResponse options:kNilOptions error:&error2];
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:apiResponse options:kNilOptions|NSJSONReadingMutableContainers|NSJSONReadingAllowFragments error:&error2];
     NSDictionary* allData = [json objectForKey:@"locationDataList"];
-    NSArray* allUserLocations = [allData objectForKey:@"locationData"];
+    id allUserLocations = [allData objectForKey:@"locationData"];
     
     NSMutableArray * pointArr = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < [allUserLocations count]; i++)
-    {
-        NSDictionary* jsonLocation = [allUserLocations objectAtIndex:i];
+    if([allUserLocations isKindOfClass:[NSDictionary class]]){
         
+        
+        NSDictionary *jsonLocation = allUserLocations;
         NSDictionary* user = [jsonLocation objectForKey:@"userData"];
         
         double latitude = [[jsonLocation objectForKey:@"latitude"] doubleValue];
@@ -189,7 +189,31 @@
         
         [pointArr addObject:point];
         
+    } else if([allUserLocations isKindOfClass:[NSArray class]]) {
+        
+        for (int i = 0; i < [allUserLocations count]; i++)
+        {
+            
+            NSDictionary *jsonLocation = [allUserLocations objectAtIndex:i];
+            NSDictionary* user = [jsonLocation objectForKey:@"userData"];
+            
+            double latitude = [[jsonLocation objectForKey:@"latitude"] doubleValue];
+            double longitude = [[jsonLocation objectForKey:@"longitude"] doubleValue];
+            
+            // create our coordinate and add it to the correct spot in the array
+            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+            
+            MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+            point.coordinate = coordinate;
+            point.title = [user objectForKey:@"userName"];
+            point.subtitle = @"S/He was here!!";
+            
+            [pointArr addObject:point];
+            
+        }
     }
+    
+    
     [self.mapView addAnnotations:pointArr];
 
     // Add an annotation

@@ -25,7 +25,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FDI-VS-cRE" kind="modal" identifier="dashBoard" id="nuA-m1-2gN"/>
+                                    <action selector="loginClicked:" destination="2" eventType="touchUpInside" id="BOD-2r-sTt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDU-Nv-pYV">
@@ -72,6 +72,11 @@
                             <constraint firstItem="LDU-Nv-pYV" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="42" id="yx9-8p-ncS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtPassword" destination="9Fv-7f-X46" id="1Km-dB-hrx"/>
+                        <outlet property="txtUsername" destination="gXn-uQ-gff" id="22A-l6-AI5"/>
+                        <segue destination="FDI-VS-cRE" kind="modal" identifier="dashboard" id="L78-5B-pbF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +234,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAt-yK-5Od">
-                                <rect key="frame" x="8" y="8" width="305" height="311"/>
+                                <rect key="frame" x="8" y="7.9999999958833374" width="305" height="311"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="305" id="afc-Ox-Bew"/>
                                     <constraint firstAttribute="height" constant="311" id="uPs-3M-w2B"/>

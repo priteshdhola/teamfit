@@ -8,6 +8,7 @@
 
 #import "TFViewController.h"
 #import "TFDashboardViewController.h"
+#import "TFSignUpMainViewController.h"
 #import "SBJson.h"
 
 @interface TFViewController ()
@@ -28,6 +29,8 @@ NSInteger flag;
 {
     [self setTxtUsername:nil];
     [self setTxtPassword:nil];
+    [self.txtUsername becomeFirstResponder];
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -102,8 +105,14 @@ NSInteger flag;
 }
 
 - (IBAction)backgroundClick:(id)sender {
-    [txtUsername resignFirstResponder];
-    [txtPassword resignFirstResponder];
+    [self.txtUsername resignFirstResponder];
+    [self.txtPassword resignFirstResponder];
+}
+
+// Sign Up
+- (void)signUpMainViewControllerDidCancel: (TFSignUpMainViewController *)controller
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

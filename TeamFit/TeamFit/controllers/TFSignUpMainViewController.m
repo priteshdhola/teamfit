@@ -30,6 +30,7 @@ NSInteger flag;
 - (void)viewDidLoad
 {
     [self.signUpEmail becomeFirstResponder];
+    self.navigationController.navigationBar.barTintColor  = [UIColor blackColor];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

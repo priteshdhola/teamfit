@@ -31,6 +31,7 @@ NSInteger flag;
 
 - (void)viewDidLoad
 {
+    self.navigationController.navigationBar.barTintColor  = [UIColor blackColor];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

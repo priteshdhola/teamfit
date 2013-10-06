@@ -3,3 +3,16 @@ TeamFit/TeamFit.xcodeproj/xcuserdata/pritesh.xcuserdatad/xcdebugger/Breakpoints_
 TeamFit/TeamFit.xcodeproj/project.xcworkspace/xcuserdata/pritesh.xcuserdatad/UserInterfaceState.xcuserstate
 TeamFit/.DS_Store
 .DS_Store
+xcuserdata
+*.lock
+*.swp	
+.Trashes
+*~.nib
+*.pbxuser
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/

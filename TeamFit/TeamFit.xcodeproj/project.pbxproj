@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210B019D17FFDDAC0030DBE1 /* TFSignUpMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B019C17FFDDAC0030DBE1 /* TFSignUpMainViewController.m */; };
+		210B01A317FFE7830030DBE1 /* TFSignUpExtraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */; };
 		21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */; };
 		21BF56C817DC036E00D2A6DB /* TFSelectActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C717DC036E00D2A6DB /* TFSelectActivityViewController.m */; };
 		21BF56CA17DD19F200D2A6DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BF56C917DD19F100D2A6DB /* MapKit.framework */; };
@@ -57,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210B019B17FFDDAC0030DBE1 /* TFSignUpMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFSignUpMainViewController.h; path = controllers/TFSignUpMainViewController.h; sourceTree = "<group>"; };
+		210B019C17FFDDAC0030DBE1 /* TFSignUpMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFSignUpMainViewController.m; path = controllers/TFSignUpMainViewController.m; sourceTree = "<group>"; };
+		210B01A117FFE7830030DBE1 /* TFSignUpExtraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFSignUpExtraViewController.h; path = controllers/TFSignUpExtraViewController.h; sourceTree = "<group>"; };
+		210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFSignUpExtraViewController.m; path = controllers/TFSignUpExtraViewController.m; sourceTree = "<group>"; };
 		21BF56C017D5859600D2A6DB /* TFNewActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFNewActivityViewController.h; sourceTree = "<group>"; };
 		21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFNewActivityViewController.m; sourceTree = "<group>"; };
 		21BF56C617DC036D00D2A6DB /* TFSelectActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSelectActivityViewController.h; sourceTree = "<group>"; };
@@ -148,6 +154,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210B019A17FFDD590030DBE1 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				210B019B17FFDDAC0030DBE1 /* TFSignUpMainViewController.h */,
+				210B019C17FFDDAC0030DBE1 /* TFSignUpMainViewController.m */,
+				210B01A117FFE7830030DBE1 /* TFSignUpExtraViewController.h */,
+				210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
 		21CDC64417D5464B002116CE = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +201,7 @@
 		21CDC65617D5464B002116CE /* TeamFit */ = {
 			isa = PBXGroup;
 			children = (
+				210B019A17FFDD590030DBE1 /* controllers */,
 				339AAFAD17FA84DC00FB9565 /* Models */,
 				21BF56C617DC036D00D2A6DB /* TFSelectActivityViewController.h */,
 				21BF56C717DC036E00D2A6DB /* TFSelectActivityViewController.m */,
@@ -407,11 +425,13 @@
 				21CDC6AC17D5481F002116CE /* SBJsonStreamWriterAccumulator.m in Sources */,
 				21CDC6AD17D5481F002116CE /* SBJsonStreamWriterState.m in Sources */,
 				21CDC6AE17D5481F002116CE /* SBJsonTokeniser.m in Sources */,
+				210B019D17FFDDAC0030DBE1 /* TFSignUpMainViewController.m in Sources */,
 				21CDC6AF17D5481F002116CE /* SBJsonUTF8Stream.m in Sources */,
 				21CDC6B017D5481F002116CE /* SBJsonWriter.m in Sources */,
 				21CDC6B317D54886002116CE /* TFDashboardViewController.m in Sources */,
 				21CDC6B817D54F72002116CE /* Activity.m in Sources */,
 				21CDC6BB17D57721002116CE /* TFActivityCell.m in Sources */,
+				210B01A317FFE7830030DBE1 /* TFSignUpExtraViewController.m in Sources */,
 				21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */,
 				21BF56C817DC036E00D2A6DB /* TFSelectActivityViewController.m in Sources */,
 				21BF56CF17DD1A9000D2A6DB /* TFRunningActivityViewController.m in Sources */,

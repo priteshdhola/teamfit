@@ -80,7 +80,13 @@
         [activities addObject:activity];
     }
     self.navigationController.navigationBar.barTintColor  = [UIColor blackColor];
-
+    
+    /******************************* Faceook Logout ********************************/
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                              initWithTitle:@"Logout"
+                                              style:UIBarButtonItemStyleBordered
+                                              target:self
+                                              action:@selector(logoutButtonWasPressed:)];
     
     /******************************* HARD CODED DATA *******************************/
     
@@ -278,5 +284,8 @@
         openActvitiyViewController.myActivity = [activities objectAtIndex:selectedRowIndex.row];
         openActvitiyViewController.delegate = self;
     }
+}
+- (IBAction)logoutButtonWasPressed:(id)sender {
+    [FBSession.activeSession closeAndClearTokenInformation];
 }
 @end

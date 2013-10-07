@@ -15,4 +15,8 @@
 
 - (IBAction)loginClicked:(id)sender;
 - (IBAction)backgroundClick:(id)sender;
+- (void)loginFailed;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+- (IBAction)performLogin:(id)sender;
+
 @end

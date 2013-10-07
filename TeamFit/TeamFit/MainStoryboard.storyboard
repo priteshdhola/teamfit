@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="TFViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="1" storyboardIdentifier="1" id="2" customClass="TFViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="051-5x-fOd"/>
                         <viewControllerLayoutGuide type="bottom" id="Kw3-hA-Maf"/>
@@ -67,6 +67,21 @@
                                     <segue destination="x3h-ZD-s80" kind="modal" identifier="signUp" id="hK8-Rc-749"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-Jc-aaa">
+                                <rect key="frame" x="152" y="201" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Facebook Login">
+                                    <color key="titleColor" red="0.052555006377551061" green="0.0068445349661593871" blue="0.0083106579178741403" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="performLogin:" destination="2" eventType="touchUpInside" id="aWN-fU-3ca"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dbc-4B-xtW">
+                                <rect key="frame" x="58" y="175" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.67320940657948358" blue="0.137915462020054" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -84,6 +99,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="spinner" destination="dbc-4B-xtW" id="rIs-GP-VFZ"/>
                         <outlet property="txtPassword" destination="9Fv-7f-X46" id="1Km-dB-hrx"/>
                         <outlet property="txtUsername" destination="gXn-uQ-gff" id="22A-l6-AI5"/>
                         <segue destination="FDI-VS-cRE" kind="modal" identifier="dashboard" id="L78-5B-pbF"/>
@@ -96,7 +112,7 @@
         <!--Dashboard View Controller - Dashboard-->
         <scene sceneID="Mhm-Qc-PYg">
             <objects>
-                <tableViewController id="4aU-JH-XT1" customClass="TFDashboardViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="0" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4aU-JH-XT1" customClass="TFDashboardViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="46" sectionHeaderHeight="22" sectionFooterHeight="22" id="IgT-6R-brH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +161,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dashboard" id="WD7-Nb-txX">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="fof-jn-Uc3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="logoutButtonWasPressed:" destination="4aU-JH-XT1" id="Aka-7I-FFk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New Activity" id="WE2-bJ-Klb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="i7t-9R-qcn" kind="modal" identifier="AddActivity" id="ANE-TY-wb1"/>
                             </connections>

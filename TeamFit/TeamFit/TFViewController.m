@@ -10,6 +10,7 @@
 #import "TFDashboardViewController.h"
 #import "TFSignUpMainViewController.h"
 #import "SBJson.h"
+#import "TFAppDelegate.h"
 
 @interface TFViewController ()
 
@@ -123,4 +124,18 @@ NSInteger flag;
     }
 }
 
+// facebook login
+- (void)loginFailed
+{
+    // User switched back to the app without authorizing. Stay here, but
+    // stop the spinner.
+    [self.spinner stopAnimating];
+}
+
+- (IBAction)performLogin:(id)sender {
+    [self.spinner startAnimating];
+    
+    TFAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    [appDelegate openSession];
+}
 @end

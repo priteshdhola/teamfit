@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import "TFNewActivityViewController.h"
 #import "TFSelectActivityViewController.h"
 
 @interface TFDashboardViewController : UITableViewController <TFNewActivityViewControllerDelegate, TFSelectActivityViewControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *activities;
 - (Activity *)objectInListAtIndex:(NSUInteger)theIndex;
+- (IBAction)logoutButtonWasPressed:(id)sender;
 @end

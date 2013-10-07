@@ -45,6 +45,7 @@
 		21CDC6B517D54A0F002116CE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */; };
 		21CDC6B817D54F72002116CE /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6B717D54F72002116CE /* Activity.m */; };
 		21CDC6BB17D57721002116CE /* TFActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6BA17D57720002116CE /* TFActivityCell.m */; };
+		21E54CEE18029BE7005E9C21 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E54CED18029BE7005E9C21 /* FacebookSDK.framework */; };
 		339AAFB617FA89CB00FB9565 /* UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 339AAFB517FA89CB00FB9565 /* UserLocation.m */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		21CDC6B717D54F72002116CE /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = models/Activity.m; sourceTree = "<group>"; };
 		21CDC6B917D57720002116CE /* TFActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFActivityCell.h; sourceTree = "<group>"; };
 		21CDC6BA17D57720002116CE /* TFActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFActivityCell.m; sourceTree = "<group>"; };
+		21E54CED18029BE7005E9C21 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		339AAFB417FA89CB00FB9565 /* UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLocation.h; path = models/UserLocation.h; sourceTree = "<group>"; };
 		339AAFB517FA89CB00FB9565 /* UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLocation.m; path = models/UserLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				21CDC65117D5464B002116CE /* UIKit.framework in Frameworks */,
 				21CDC65317D5464B002116CE /* Foundation.framework in Frameworks */,
 				21CDC65517D5464B002116CE /* CoreGraphics.framework in Frameworks */,
+				21E54CEE18029BE7005E9C21 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +191,7 @@
 		21CDC64F17D5464B002116CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21E54CED18029BE7005E9C21 /* FacebookSDK.framework */,
 				21BF56CB17DD19F700D2A6DB /* CoreLocation.framework */,
 				21BF56C917DD19F100D2A6DB /* MapKit.framework */,
 				21CDC65017D5464B002116CE /* UIKit.framework */,
@@ -535,6 +539,10 @@
 		21CDC68617D5464B002116CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pritesh/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TeamFit/TeamFit-Prefix.pch";
 				INFOPLIST_FILE = "TeamFit/TeamFit-Info.plist";
@@ -546,6 +554,10 @@
 		21CDC68717D5464B002116CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/pritesh/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TeamFit/TeamFit-Prefix.pch";
 				INFOPLIST_FILE = "TeamFit/TeamFit-Info.plist";

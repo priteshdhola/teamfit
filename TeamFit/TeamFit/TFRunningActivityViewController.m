@@ -8,14 +8,20 @@
 
 #import "TFRunningActivityViewController.h"
 #import "UserLocation.h"
-#define kPollingInterval 1.0
 #import "SBJson.h"
+#define METERS_PER_MILE 1609.344
+#define kPollingInterval 1.0
 
 @implementation TFRunningActivityViewController
 
-#define METERS_PER_MILE 1609.344
-
 @synthesize mylocations;
+@synthesize distanceLabel;
+@synthesize timerLabel;
+//@synthesize totalDistance;
+NSMutableArray *myArray;
+NSMutableArray *myArray2;
+NSInteger *distance;
+double totalDistance;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +45,11 @@
                                                 repeats:YES];
     self.navigationController.navigationBar.barTintColor  = [UIColor blackColor];
     self.mylocations = [[NSMutableArray alloc]init];
+    distance = 0;
+    totalDistance = 0;
+    
+    myArray = [[NSMutableArray alloc] init];
+    myArray2 = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,11 +57,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)end:(id)sender
 {
- //   [self.delegate runningActivityViewControllerDidEnd:self];
+//    [self.delegate runningActivityViewControllerDidEnd:self];
 //    [self.navigationController popToRootViewControllerAnimated:TRUE];
-    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+//    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)updateTimer{
@@ -66,7 +78,6 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    
     CLLocationCoordinate2D curCoordinate = userLocation.coordinate;
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(curCoordinate, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
@@ -81,6 +92,24 @@
     userLoc.longitude = [[NSNumber alloc] initWithFloat:curCoordinate.longitude];
     userLoc.timestamp = [[NSNumber alloc] initWithFloat: floor(userLocation.location.timestamp.timeIntervalSince1970 * 1000) ];
     
+    
+    // Saving it in a temp array to calculate total distance
+    /////////////////////////////////////////////////////////////////////
+    [myArray addObject:userLoc.latitude];
+    [myArray2 addObject:userLoc.longitude];
+    
+    int size = [myArray count];
+    if(size>1) {
+        CLLocation *locA = [[CLLocation alloc] initWithLatitude:[[myArray objectAtIndex:size-1] doubleValue] longitude:[[myArray2 objectAtIndex:size-1] doubleValue]];
+        CLLocation *locB = [[CLLocation alloc] initWithLatitude:[[myArray objectAtIndex:size-2] doubleValue] longitude:[[myArray2 objectAtIndex:size-2] doubleValue]];
+        CLLocationDistance distance = [locA distanceFromLocation:locB];
+        double distanceInMile = distance * 0.00062137;
+        totalDistance = totalDistance + distanceInMile;
+        
+        self.distanceLabel.text = [NSString stringWithFormat:@"%.2f", totalDistance];
+    }
+    
+    
     //store current location on server
     NSError* error;
     //[NSJSONSerialization JSONObjectWithData:[NSData dataWithBytes: userLoc]  options:kNilOptions error:&error];
@@ -94,16 +123,16 @@
     
     NSString *jsonRequest = [NSString stringWithFormat:@"{\"locationData\": {\"latitude\": \"%@\",\"longitude\": \"%@\",\"timestamp\": \"%@\"}}",userLoc.latitude,userLoc.longitude,userLoc.timestamp];
     
-    NSLog(@"The request data is %@",jsonRequest);
-    NSLog(@"Error %@", error);
+//    NSLog(@"The request data is %@",jsonRequest);
+//    NSLog(@"Error %@", error);
     
     NSData *requestData = [NSData dataWithBytes:[jsonRequest UTF8String] length:[jsonRequest length]];
     
-    NSInteger randomUserId = (arc4random() % 2) + 1;
+    NSInteger randomUserId = (arc4random() % 1) + 1;
     NSString* baseUrl = [ NSString stringWithFormat: @"http://localhost:8080/tracksafe/activities/1/%ld",(long)randomUserId ];
     
     NSURL *locationOfWebService = [NSURL URLWithString:baseUrl];
-    NSLog(@"web url = %@",locationOfWebService);
+//    NSLog(@"web url = %@",locationOfWebService);
     NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc]initWithURL:locationOfWebService];
     [theRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [theRequest setHTTPMethod:@"POST"];
@@ -214,7 +243,7 @@
     }
     
     
-    [self.mapView addAnnotations:pointArr];
+ //   [self.mapView addAnnotations:pointArr];
 
     // Add an annotation
    /*  MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
@@ -231,11 +260,20 @@
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
     MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
     polylineView.strokeColor = [UIColor redColor];
-    polylineView.lineWidth = 5.0;
+    polylineView.lineWidth = 10.0;
     
     return polylineView;
 }
 
-
-
+// Segue logic
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"activityResults"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        TFActivityResultsViewController *destination = [[navigationController viewControllers] objectAtIndex:0];
+        destination.mylocations = self.mylocations;
+        destination.totalTime = self.timerLabel.text;
+        destination.totalDistance = [NSString stringWithFormat:@"%.2f", totalDistance];
+    }
+}
 @end

@@ -10,6 +10,7 @@
 		210B019D17FFDDAC0030DBE1 /* TFSignUpMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B019C17FFDDAC0030DBE1 /* TFSignUpMainViewController.m */; };
 		210B01A317FFE7830030DBE1 /* TFSignUpExtraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */; };
 		2138E40B1803D25F001F6BBA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2138E40A1803D25F001F6BBA /* FacebookSDK.framework */; };
+		214301AF1809F963009096FD /* TFActivityResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214301AE1809F963009096FD /* TFActivityResultsViewController.m */; };
 		21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */; };
 		21BF56C817DC036E00D2A6DB /* TFSelectActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C717DC036E00D2A6DB /* TFSelectActivityViewController.m */; };
 		21BF56CA17DD19F200D2A6DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BF56C917DD19F100D2A6DB /* MapKit.framework */; };
@@ -65,6 +66,8 @@
 		210B01A117FFE7830030DBE1 /* TFSignUpExtraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFSignUpExtraViewController.h; path = controllers/TFSignUpExtraViewController.h; sourceTree = "<group>"; };
 		210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFSignUpExtraViewController.m; path = controllers/TFSignUpExtraViewController.m; sourceTree = "<group>"; };
 		2138E40A1803D25F001F6BBA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		214301AD1809F963009096FD /* TFActivityResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFActivityResultsViewController.h; path = controllers/TFActivityResultsViewController.h; sourceTree = "<group>"; };
+		214301AE1809F963009096FD /* TFActivityResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFActivityResultsViewController.m; path = controllers/TFActivityResultsViewController.m; sourceTree = "<group>"; };
 		21BF56C017D5859600D2A6DB /* TFNewActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFNewActivityViewController.h; sourceTree = "<group>"; };
 		21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFNewActivityViewController.m; sourceTree = "<group>"; };
 		21BF56C617DC036D00D2A6DB /* TFSelectActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSelectActivityViewController.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				210B019C17FFDDAC0030DBE1 /* TFSignUpMainViewController.m */,
 				210B01A117FFE7830030DBE1 /* TFSignUpExtraViewController.h */,
 				210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */,
+				214301AD1809F963009096FD /* TFActivityResultsViewController.h */,
+				214301AE1809F963009096FD /* TFActivityResultsViewController.m */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				21CDC66D17D5464B002116CE /* TFViewController.m in Sources */,
 				21CDC6A517D5481F002116CE /* NSObject+SBJson.m in Sources */,
 				21CDC6A617D5481F002116CE /* SBJsonParser.m in Sources */,
+				214301AF1809F963009096FD /* TFActivityResultsViewController.m in Sources */,
 				21CDC6A717D5481F002116CE /* SBJsonStreamParser.m in Sources */,
 				21CDC6A817D5481F002116CE /* SBJsonStreamParserAccumulator.m in Sources */,
 				21CDC6A917D5481F002116CE /* SBJsonStreamParserAdapter.m in Sources */,

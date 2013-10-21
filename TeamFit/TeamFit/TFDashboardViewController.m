@@ -136,7 +136,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     TFActivityCell *cell = (TFActivityCell *)[tableView dequeueReusableCellWithIdentifier:@"ActivityCell"];
-    NSLog(@"%lu",(unsigned long)[activities count]);
+//    NSLog(@"%lu",(unsigned long)[activities count]);
 	Activity *activity = [self.activities objectAtIndex:indexPath.row];
 	cell.nameLabel.text = activity.name;
 	cell.dateLabel.text = activity.date;
@@ -204,7 +204,7 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-    [self performSegueWithIdentifier:@"OpenActivity" sender:self];
+    //[self performSegueWithIdentifier:@"OpenActivity" sender:self];
 }
 
 /********************************************************************************/
@@ -242,7 +242,7 @@
     NSURLConnection *connect = [[NSURLConnection alloc]initWithRequest:theRequest delegate:self];
     if (connect) {
         NSMutableData* webData = [[NSMutableData alloc]init];
-        NSLog(@"Response %@: ",webData);
+//        NSLog(@"Response %@: ",webData);
     }
     else {
         NSLog(@"No Connection established");

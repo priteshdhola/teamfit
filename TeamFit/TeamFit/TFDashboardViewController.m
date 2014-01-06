@@ -82,7 +82,7 @@
     self.navigationController.navigationBar.barTintColor  = [UIColor blackColor];
     
     /******************************* Faceook Logout ********************************/
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                               initWithTitle:@"Logout"
                                               style:UIBarButtonItemStyleBordered
                                               target:self

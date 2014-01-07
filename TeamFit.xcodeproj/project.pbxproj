@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		210B019D17FFDDAC0030DBE1 /* TFSignUpMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B019C17FFDDAC0030DBE1 /* TFSignUpMainViewController.m */; };
 		210B01A317FFE7830030DBE1 /* TFSignUpExtraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */; };
-		2138E40B1803D25F001F6BBA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2138E40A1803D25F001F6BBA /* FacebookSDK.framework */; };
 		214301AF1809F963009096FD /* TFActivityResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214301AE1809F963009096FD /* TFActivityResultsViewController.m */; };
 		21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */; };
 		21BF56C817DC036E00D2A6DB /* TFSelectActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C717DC036E00D2A6DB /* TFSelectActivityViewController.m */; };
@@ -47,6 +46,8 @@
 		21CDC6B517D54A0F002116CE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */; };
 		21CDC6B817D54F72002116CE /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6B717D54F72002116CE /* Activity.m */; };
 		21CDC6BB17D57721002116CE /* TFActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21CDC6BA17D57720002116CE /* TFActivityCell.m */; };
+		336BD9361869690D00080BBF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2138E40A1803D25F001F6BBA /* FacebookSDK.framework */; };
+		336BD93918696E7900080BBF /* TFChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 336BD93818696E7900080BBF /* TFChatCell.m */; };
 		339AAFB617FA89CB00FB9565 /* UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 339AAFB517FA89CB00FB9565 /* UserLocation.m */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,8 @@
 		21CDC6B717D54F72002116CE /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = models/Activity.m; sourceTree = "<group>"; };
 		21CDC6B917D57720002116CE /* TFActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFActivityCell.h; sourceTree = "<group>"; };
 		21CDC6BA17D57720002116CE /* TFActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFActivityCell.m; sourceTree = "<group>"; };
+		336BD93718696E7900080BBF /* TFChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFChatCell.h; path = TeamFit/models/TFChatCell.h; sourceTree = SOURCE_ROOT; };
+		336BD93818696E7900080BBF /* TFChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFChatCell.m; path = TeamFit/models/TFChatCell.m; sourceTree = SOURCE_ROOT; };
 		339AAFB417FA89CB00FB9565 /* UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLocation.h; path = models/UserLocation.h; sourceTree = "<group>"; };
 		339AAFB517FA89CB00FB9565 /* UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLocation.m; path = models/UserLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,12 +141,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336BD9361869690D00080BBF /* FacebookSDK.framework in Frameworks */,
 				21BF56CC17DD19F700D2A6DB /* CoreLocation.framework in Frameworks */,
 				21BF56CA17DD19F200D2A6DB /* MapKit.framework in Frameworks */,
 				21CDC65117D5464B002116CE /* UIKit.framework in Frameworks */,
 				21CDC65317D5464B002116CE /* Foundation.framework in Frameworks */,
 				21CDC65517D5464B002116CE /* CoreGraphics.framework in Frameworks */,
-				2138E40B1803D25F001F6BBA /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +255,8 @@
 				21CDC68017D5464B002116CE /* TeamFitTests.h */,
 				21CDC68117D5464B002116CE /* TeamFitTests.m */,
 				21CDC67B17D5464B002116CE /* Supporting Files */,
+				336BD93718696E7900080BBF /* TFChatCell.h */,
+				336BD93818696E7900080BBF /* TFChatCell.m */,
 			);
 			path = TeamFitTests;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21CDC68217D5464B002116CE /* TeamFitTests.m in Sources */,
+				336BD93918696E7900080BBF /* TFChatCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +555,7 @@
 					"$(inherited)",
 					/Users/pritesh/Documents/FacebookSDK,
 					/Users/pritesh/App/git/teamfit/TeamFit,
+					/Users/npatel/Dropbox/ispace/teamfit/TeamFit,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TeamFit/TeamFit-Prefix.pch";
@@ -565,6 +572,7 @@
 					"$(inherited)",
 					/Users/pritesh/Documents/FacebookSDK,
 					/Users/pritesh/App/git/teamfit/TeamFit,
+					/Users/npatel/Dropbox/ispace/teamfit/TeamFit,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TeamFit/TeamFit-Prefix.pch";

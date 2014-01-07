@@ -32,6 +32,9 @@
     [self.window makeKeyAndVisible];
     
     // See if the app has a valid token for the current state.
+    NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
+    NSLog(@"Token value : %@",fbAccessToken);
+    
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         // Yes, so just open the session (this won't display any UX).
         [self openSession];

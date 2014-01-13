@@ -22,22 +22,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    TFDashboardViewController* myViewController = [sb instantiateViewControllerWithIdentifier:@"0"];
-    
-    //self.mainViewController = [[SCViewController alloc] initWithNibName:@"SCViewController" bundle:nil];
-    self.mainViewController = myViewController;
-    self.navController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
-    self.window.rootViewController = self.navController;
-    [self.window makeKeyAndVisible];
-    
     // See if the app has a valid token for the current state.
     NSString *fbAccessToken = [[[FBSession activeSession] accessTokenData] accessToken];
     NSLog(@"Token value : %@",fbAccessToken);
     
+    // If FB token is valid than take user to dashboard otherwise show the login view
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         // Yes, so just open the session (this won't display any UX).
         [self openSession];
+        [self showDashboard];
     } else {
         // No, display the login page.
         [self showLoginView];
@@ -73,6 +66,17 @@
 }
 
 /*********************************************************************/
+
+- (void)showDashboard
+{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    TFDashboardViewController* myViewController = [sb instantiateViewControllerWithIdentifier:@"0"];
+    
+    self.mainViewController = myViewController;
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+    self.window.rootViewController = self.navController;
+    [self.window makeKeyAndVisible];
+}
 
 - (void)showLoginView
 {

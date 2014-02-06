@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		210B019D17FFDDAC0030DBE1 /* TFSignUpMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B019C17FFDDAC0030DBE1 /* TFSignUpMainViewController.m */; };
 		210B01A317FFE7830030DBE1 /* TFSignUpExtraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */; };
+		211B430818A3637E00B6A3E0 /* facebook_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 211B430718A3637D00B6A3E0 /* facebook_login.png */; };
+		211B430A18A3670700B6A3E0 /* Facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 211B430918A3670700B6A3E0 /* Facebook@2x.png */; };
+		211B430C18A380FE00B6A3E0 /* login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 211B430B18A380FE00B6A3E0 /* login_button.png */; };
+		211B430E18A3850800B6A3E0 /* singup_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 211B430D18A3850800B6A3E0 /* singup_button.png */; };
 		2138E40B1803D25F001F6BBA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2138E40A1803D25F001F6BBA /* FacebookSDK.framework */; };
 		214301AF1809F963009096FD /* TFActivityResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214301AE1809F963009096FD /* TFActivityResultsViewController.m */; };
 		21BF56C217D5859600D2A6DB /* TFNewActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BF56C117D5859600D2A6DB /* TFNewActivityViewController.m */; };
@@ -65,6 +69,10 @@
 		210B019C17FFDDAC0030DBE1 /* TFSignUpMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFSignUpMainViewController.m; path = controllers/TFSignUpMainViewController.m; sourceTree = "<group>"; };
 		210B01A117FFE7830030DBE1 /* TFSignUpExtraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFSignUpExtraViewController.h; path = controllers/TFSignUpExtraViewController.h; sourceTree = "<group>"; };
 		210B01A217FFE7830030DBE1 /* TFSignUpExtraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFSignUpExtraViewController.m; path = controllers/TFSignUpExtraViewController.m; sourceTree = "<group>"; };
+		211B430718A3637D00B6A3E0 /* facebook_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_login.png; sourceTree = "<group>"; };
+		211B430918A3670700B6A3E0 /* Facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook@2x.png"; sourceTree = "<group>"; };
+		211B430B18A380FE00B6A3E0 /* login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button.png; sourceTree = "<group>"; };
+		211B430D18A3850800B6A3E0 /* singup_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = singup_button.png; sourceTree = "<group>"; };
 		2138E40A1803D25F001F6BBA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		214301AD1809F963009096FD /* TFActivityResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFActivityResultsViewController.h; path = controllers/TFActivityResultsViewController.h; sourceTree = "<group>"; };
 		214301AE1809F963009096FD /* TFActivityResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFActivityResultsViewController.m; path = controllers/TFActivityResultsViewController.m; sourceTree = "<group>"; };
@@ -173,11 +181,30 @@
 			name = controllers;
 			sourceTree = "<group>";
 		};
+		211B430518A35CE900B6A3E0 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				211B430618A35CE900B6A3E0 /* images */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		211B430618A35CE900B6A3E0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				211B430D18A3850800B6A3E0 /* singup_button.png */,
+				211B430B18A380FE00B6A3E0 /* login_button.png */,
+				211B430918A3670700B6A3E0 /* Facebook@2x.png */,
+				211B430718A3637D00B6A3E0 /* facebook_login.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		21CDC64417D5464B002116CE = {
 			isa = PBXGroup;
 			children = (
-				21CDC68B17D5481F002116CE /* json */,
 				21CDC65617D5464B002116CE /* TeamFit */,
+				21CDC68B17D5481F002116CE /* json */,
 				21CDC67A17D5464B002116CE /* TeamFitTests */,
 				21CDC64F17D5464B002116CE /* Frameworks */,
 				21CDC64E17D5464B002116CE /* Products */,
@@ -210,6 +237,7 @@
 		21CDC65617D5464B002116CE /* TeamFit */ = {
 			isa = PBXGroup;
 			children = (
+				211B430518A35CE900B6A3E0 /* resources */,
 				210B019A17FFDD590030DBE1 /* controllers */,
 				339AAFAD17FA84DC00FB9565 /* Models */,
 				21BF56C617DC036D00D2A6DB /* TFSelectActivityViewController.h */,
@@ -221,8 +249,8 @@
 				21CDC6B117D54886002116CE /* TFDashboardViewController.h */,
 				21CDC6B217D54886002116CE /* TFDashboardViewController.m */,
 				21CDC66B17D5464B002116CE /* TFViewController.h */,
-				21CDC66C17D5464B002116CE /* TFViewController.m */,
 				21CDC6B417D54A0F002116CE /* MainStoryboard.storyboard */,
+				21CDC66C17D5464B002116CE /* TFViewController.m */,
 				21CDC65F17D5464B002116CE /* TFAppDelegate.h */,
 				21CDC66017D5464B002116CE /* TFAppDelegate.m */,
 				21CDC65717D5464B002116CE /* Supporting Files */,
@@ -382,10 +410,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				21CDC65B17D5464B002116CE /* InfoPlist.strings in Resources */,
+				211B430818A3637E00B6A3E0 /* facebook_login.png in Resources */,
 				21CDC66317D5464B002116CE /* Default.png in Resources */,
+				211B430E18A3850800B6A3E0 /* singup_button.png in Resources */,
+				211B430A18A3670700B6A3E0 /* Facebook@2x.png in Resources */,
 				21CDC66517D5464B002116CE /* Default@2x.png in Resources */,
 				21CDC66717D5464B002116CE /* Default-568h@2x.png in Resources */,
 				21CDC6B517D54A0F002116CE /* MainStoryboard.storyboard in Resources */,
+				211B430C18A380FE00B6A3E0 /* login_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -64,7 +64,7 @@ NSInteger flag;
     }
     
     /****************** Make the Post call for login ************************/
-    NSURL *locationOfWebService = [NSURL URLWithString:@"http://localhost:8080/tracksafe/users"];
+    NSURL *locationOfWebService = [NSURL URLWithString:@"http://localhost:8080/tracksafe/auth"];
     NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc]initWithURL:locationOfWebService];
     NSHTTPURLResponse *response = nil;
     

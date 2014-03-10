@@ -16,5 +16,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) TFDashboardViewController *mainViewController;
 @property (strong, nonatomic) TFViewController* loginViewController;
+@property (strong, nonatomic) FBSession *fbSession;
 - (void)openSession;
 @end

@@ -19,6 +19,7 @@
 @synthesize totalTime;
 @synthesize totalDistance;
 @synthesize mapView;
+@synthesize myActivity;
 
 CLLocationManager *locationManager;
 
@@ -70,7 +71,29 @@ CLLocationManager *locationManager;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"activityDone"]) {
+        NSLog(@"Activity ID value : %@",myActivity.activityId);
         TFDashboardViewController *destinationViewController = segue.destinationViewController;
+        
+        // Update activity results
+        
+        NSString *soapFormat = [NSString stringWithFormat:@"{\"activityData\": {\"distance\": \"%@\",\"pace\": \"%f\",\"startDate\": \"%@ %@\"}}",totalDistance,[totalDistance doubleValue]/[totalTime doubleValue],myActivity.date,myActivity.time];
+        
+        NSLog(@"The request format is %@",soapFormat);
+        NSString *urlString = [NSString stringWithFormat: @"http://localhost:8080/tracksafe/activities/%@/finish",myActivity.activityId];
+        NSURL *locationOfWebService = [NSURL URLWithString: urlString];
+        NSLog(@"web url = %@",locationOfWebService);
+        NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc]initWithURL:locationOfWebService];
+        [theRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [theRequest setHTTPMethod:@"POST"];
+        [theRequest setHTTPBody:[soapFormat dataUsingEncoding:NSUTF8StringEncoding]];
+        NSURLConnection *connect = [[NSURLConnection alloc]initWithRequest:theRequest delegate:self];
+        if (connect) {
+            NSMutableData* webData = [[NSMutableData alloc]init];
+                    NSLog(@"Response %@: ",webData);
+        }
+        else {
+            NSLog(@"No Connection established");
+        }
     }
 }
 @end

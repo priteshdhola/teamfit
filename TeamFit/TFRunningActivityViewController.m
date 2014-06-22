@@ -17,6 +17,7 @@
 @synthesize mylocations;
 @synthesize distanceLabel;
 @synthesize timerLabel;
+@synthesize myActivity;
 //@synthesize totalDistance;
 NSMutableArray *myArray;
 NSMutableArray *myArray2;
@@ -102,6 +103,7 @@ double totalDistance;
     if(size>1) {
         CLLocation *locA = [[CLLocation alloc] initWithLatitude:[[myArray objectAtIndex:size-1] doubleValue] longitude:[[myArray2 objectAtIndex:size-1] doubleValue]];
         CLLocation *locB = [[CLLocation alloc] initWithLatitude:[[myArray objectAtIndex:size-2] doubleValue] longitude:[[myArray2 objectAtIndex:size-2] doubleValue]];
+        // Is this shortest distance between two points ?
         CLLocationDistance distance = [locA distanceFromLocation:locB];
         double distanceInMile = distance * 0.00062137;
         totalDistance = totalDistance + distanceInMile;
@@ -271,6 +273,7 @@ double totalDistance;
     if ([segue.identifier isEqualToString:@"activityResults"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         TFActivityResultsViewController *destination = [[navigationController viewControllers] objectAtIndex:0];
+        destination.myActivity = myActivity;
         destination.mylocations = self.mylocations;
         destination.totalTime = self.timerLabel.text;
         destination.totalDistance = [NSString stringWithFormat:@"%.2f", totalDistance];

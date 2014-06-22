@@ -54,6 +54,7 @@
     NSDictionary* jsonActivity;
     NSString* name;
     NSString* type;
+    NSString* thisId;
     NSString* dateAndTime;
     NSArray* foo;
     NSString* dateValue;
@@ -64,6 +65,7 @@
     {
         jsonActivity = [allActivities objectAtIndex:i];
         
+        thisId = [jsonActivity objectForKey:@"id"];
         name = [jsonActivity objectForKey:@"name"];
         type = [jsonActivity objectForKey:@"type"];
         dateAndTime = [jsonActivity objectForKey:@"createdDate"];
@@ -74,6 +76,7 @@
         timeValue = [foo objectAtIndex: 0];
         
         activity = [[Activity alloc] init];
+        activity.activityId = thisId;
         activity.name = name;
         activity.date = dateValue;
         activity.time = timeValue;

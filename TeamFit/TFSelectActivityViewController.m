@@ -69,6 +69,8 @@
     if ([segue.identifier isEqualToString:@"StartingActivity"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         TFRunningActivityViewController *runningActvitiyViewController = [[navigationController viewControllers] objectAtIndex:0];
+        runningActvitiyViewController.myActivity = myActivity;
+
         runningActvitiyViewController.delegate = self;
     }
 }

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Activity : NSObject
+@property (nonatomic, copy) NSString *activityId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *date;
 @property (nonatomic, copy) NSString *time;

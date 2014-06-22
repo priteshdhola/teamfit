@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Activity.h"
 
 
 @interface TFActivityResultsViewController : UIViewController <MKMapViewDelegate>
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) Activity *myActivity;
 
 @property (nonatomic, strong) NSMutableArray *mylocations;
 @property (nonatomic, strong) NSString *totalTime;

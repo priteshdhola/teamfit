@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "TFActivityResultsViewController.h"
+#import "Activity.h"
 
 @class TFRunningActivityViewController;
 
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSTimer *stopTimer;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, strong) NSMutableArray *mylocations;
+@property (nonatomic, strong) Activity *myActivity;
 
 - (IBAction)end:(id)sender;
 

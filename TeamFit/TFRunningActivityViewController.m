@@ -23,6 +23,7 @@ NSMutableArray *myArray;
 NSMutableArray *myArray2;
 NSInteger *distance;
 double totalDistance;
+NSTimeInterval timeInterval;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -68,7 +69,7 @@ double totalDistance;
 
 -(void)updateTimer{
     NSDate *currentDate = [NSDate date];
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
+    timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"mm:ss"];
@@ -275,7 +276,7 @@ double totalDistance;
         TFActivityResultsViewController *destination = [[navigationController viewControllers] objectAtIndex:0];
         destination.myActivity = myActivity;
         destination.mylocations = self.mylocations;
-        destination.totalTime = self.timerLabel.text;
+        destination.totalTime = [NSString stringWithFormat:@"%.2f", timeInterval];//self.timerLabel.text;
         destination.totalDistance = [NSString stringWithFormat:@"%.2f", totalDistance];
     }
 }

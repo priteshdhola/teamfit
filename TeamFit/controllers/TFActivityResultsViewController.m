@@ -20,6 +20,7 @@
 @synthesize totalDistance;
 @synthesize mapView;
 @synthesize myActivity;
+float paceData;
 
 CLLocationManager *locationManager;
 
@@ -73,13 +74,17 @@ CLLocationManager *locationManager;
     if ([segue.identifier isEqualToString:@"activityDone"]) {
         NSLog(@"Activity ID value : %@",myActivity.activityId);
         TFDashboardViewController *destinationViewController = segue.destinationViewController;
+        // Sample data
+       // totalTime = @"600";
+       // totalDistance = @"1.03";
+        paceData = ([totalTime intValue]/60)/[totalDistance floatValue];
         
         // Update activity results
         
-        NSString *soapFormat = [NSString stringWithFormat:@"{\"activityData\": {\"distance\": \"%@\",\"pace\": \"%f\",\"startDate\": \"%@ %@\"}}",totalDistance,[totalDistance doubleValue]/[totalTime doubleValue],myActivity.date,myActivity.time];
+        NSString *soapFormat = [NSString stringWithFormat:@"{\"userActivityData\": {\"distance\": \"%@\",\"pace\": \"%d\",\"time\": \"%@T%@\",\"status\": 2}}",totalDistance,(int)roundf(paceData),myActivity.date,myActivity.time];
         
         NSLog(@"The request format is %@",soapFormat);
-        NSString *urlString = [NSString stringWithFormat: @"http://localhost:8080/tracksafe/activities/%@/finish",myActivity.activityId];
+        NSString *urlString = [NSString stringWithFormat: @"http://localhost:8080/tracksafe/activities/%@/status/update",myActivity.activityId];
         NSURL *locationOfWebService = [NSURL URLWithString: urlString];
         NSLog(@"web url = %@",locationOfWebService);
         NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc]initWithURL:locationOfWebService];
